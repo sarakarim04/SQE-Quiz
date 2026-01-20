@@ -1,4 +1,5 @@
-const originalQuestions = [
+(() => {
+  const questions = [
     {
       topic: "Encouragement — presence",
       q: "P punches V causing ABH. S stands nearby smiling and nodding at P, which P sees and is emboldened. Best analysis?",
@@ -631,9 +632,10 @@ const originalQuestions = [
     }
   ];
 
-window.quizData = {
-  title: "SQE1 Criminal Law — Parties to a Crime Quiz",
-  subtitle: "Encouragement, assistance, withdrawal, scope, SCA 2007, and joint principals.",
-  questions: originalQuestions
-};
+  window.quizData = {
+    title: "SQE1 Criminal Law — Parties to a Crime Quiz",
+    subtitle: "Encouragement, assistance, withdrawal, scope, SCA 2007, and joint principals.",
+    questions: questions
+  };
+})();
   

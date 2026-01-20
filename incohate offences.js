@@ -1,4 +1,5 @@
-const originalQuestions = [
+(() => {
+  const questions = [
     {
       topic: "Attempt — more than merely preparatory",
       q: "D plans to rob a shop. He buys a mask and gloves and walks towards the shop but is arrested 200 metres away. Is D guilty of attempted robbery?",
@@ -334,12 +335,307 @@ const originalQuestions = [
           "SCA 2007 can apply even if the principal offence is not completed (depending on elements/defences)."
         ]
       }
+    },  
+    {
+      topic: "Attempt — approaching point of commission",
+      q: "D writes a robbery demand note, enters the bank, queues at the counter, and is arrested just as he reaches the cashier (before presenting the note). Best analysis?",
+      choices: [
+        "No attempt because he has not demanded money yet",
+        "Attempted robbery because he has moved beyond preparation and is at the point of executing the plan",
+        "No inchoate liability because no violence was used",
+        "Conspiracy only"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "The question is whether D has done an act more than merely preparatory. Being in the bank and at the counter with a demand note is typically very close to execution and is likely to satisfy the threshold (fact-sensitive).",
+        whyWrong: [
+          "Presenting the note is not the only possible 'execution' step; being at the point of commission can be enough.",
+          "—",
+          "Robbery can be attempted without violence actually being used yet, provided the attempt threshold and intent are satisfied.",
+          "Conspiracy requires agreement; none is stated."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — still merely preparatory (outside with weapon)",
+      q: "D stands outside a post office with a loaded gun and a mask, watching customers, but has not entered. Best analysis on attempt?",
+      choices: [
+        "Attempted robbery automatically",
+        "Likely still merely preparatory (pre-execution), depending on facts",
+        "Completed robbery because he had a gun",
+        "Conspiracy to rob"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Courts often treat 'outside with equipment' as still preparation rather than execution. Whether it crosses the threshold is fact-sensitive, but the best answer is that it is likely still merely preparatory.",
+        whyWrong: [
+          "It is not automatic; the 'more than merely preparatory' threshold must still be met.",
+          "—",
+          "Having a gun does not make robbery complete.",
+          "Conspiracy requires an agreement."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — key in lock / entry steps",
+      q: "D goes to a house to burgle it, inserts a key into the lock and begins to turn it, but is arrested immediately. Best analysis?",
+      choices: [
+        "Only preparation because no entry occurred",
+        "Likely attempted burglary because D has begun the execution of entry",
+        "Completed burglary because the key touched the lock",
+        "No liability unless D steals something"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Beginning the physical process of entry (key in lock/turning) is usually beyond mere preparation and strongly supports attempt liability.",
+        whyWrong: [
+          "Entry is not required for attempt; it is for the completed offence.",
+          "—",
+          "Touching the lock is not completion of burglary.",
+          "Attempt does not require theft to be completed."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — attempted criminal damage",
+      q: "D pours petrol on V’s car intending to set it on fire. D strikes a match, but it blows out and nothing ignites. Best liability?",
+      choices: [
+        "No offence because no damage occurred",
+        "Attempted criminal damage (and potentially attempted arson if relevant)",
+        "Conspiracy only",
+        "No liability because the match blew out"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "D has gone beyond preparation and is executing the intended criminal damage. The absence of actual damage does not prevent attempt liability.",
+        whyWrong: [
+          "Damage is required for the completed offence, not for attempt.",
+          "—",
+          "Conspiracy requires an agreement.",
+          "Failure due to chance does not erase attempt once the threshold is crossed."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — impossibility by circumstance (victim absent)",
+      q: "D breaks into V’s house intending to assault V, but V is not home. Best analysis?",
+      choices: [
+        "No attempt because V was absent",
+        "Attempted assault may still be possible if D has done more than merely preparatory acts with the requisite intent",
+        "Completed assault because entry occurred",
+        "No liability unless V later finds out and is scared"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Attempt can exist even if completion is impossible on the facts (e.g., victim absent), provided D has crossed the attempt threshold and has the required intent.",
+        whyWrong: [
+          "Absence does not automatically prevent attempt liability.",
+          "—",
+          "Assault is not completed by entry into a house.",
+          "V’s later discovery does not determine attempt liability."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — legal impossibility (no underlying offence)",
+      q: "D believes it is a criminal offence to commit adultery. D tries to commit adultery. Best analysis?",
+      choices: [
+        "Attempted adultery is a crime because D believed it was illegal",
+        "No attempt liability because you cannot attempt a non-existent offence",
+        "Conspiracy to commit adultery",
+        "Liability depends on whether harm occurred"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Attempt requires an underlying offence. If the conduct is not criminal at all, D cannot be guilty of attempting it.",
+        whyWrong: [
+          "Criminal liability is not based purely on mistaken beliefs about what the law is.",
+          "—",
+          "Conspiracy also requires an agreement to commit an offence; if there is no offence, conspiracy cannot apply.",
+          "Harm is irrelevant where there is no criminal offence."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — MR for attempted theft",
+      q: "Which mens rea is MOST accurately required for attempted theft?",
+      choices: [
+        "Intention to appropriate property, plus dishonesty, plus intention to permanently deprive",
+        "Recklessness as to appropriation is enough",
+        "Negligence as to ownership is enough",
+        "No mens rea is needed because theft is strict liability"
+      ],
+      correct: 0,
+      explain: {
+        whyRight:
+          "Attempted theft requires the mens rea of theft: intention to appropriate, dishonesty, and intention to permanently deprive (alongside the attempt actus reus threshold).",
+        whyWrong: [
+          "—",
+          "Recklessness is not the general mens rea for theft/attempted theft.",
+          "Negligence is not enough.",
+          "Theft is not strict liability."
+        ]
+      }
+    },
+    {
+      topic: "Attempt — circumstance element (belief requirement)",
+      q: "D agrees to buy a laptop believing it is stolen and intending to commit handling stolen goods. Which mental state best fits the circumstance element for attempted handling?",
+      choices: [
+        "Belief that the goods are stolen (or equivalent fault required by the full offence)",
+        "Negligence as to whether goods are stolen",
+        "Strict liability as to whether goods are stolen",
+        "No mental element is required for attempts"
+      ],
+      correct: 0,
+      explain: {
+        whyRight:
+          "For attempts, D must generally intend the commission of the offence; for circumstance elements, the required mental state typically mirrors the full offence (often belief/knowledge rather than intention).",
+        whyWrong: [
+          "—",
+          "Negligence is not the general test.",
+          "Strict liability is not assumed.",
+          "Attempts still require mens rea."
+        ]
+      }
+    },
+    {
+      topic: "Conspiracy — bilateral nature (undercover officer)",
+      q: "D 'agrees' with an undercover police officer to supply drugs. The officer never intends any drugs to be supplied and is acting to detect crime. Best analysis?",
+      choices: [
+        "Conspiracy is automatically made out because D agreed",
+        "No conspiracy if there is no true agreement between two parties to commit the offence",
+        "Attempted supply only because an agreement always equals attempt",
+        "No liability of any kind"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Conspiracy requires an agreement between at least two parties to pursue the criminal course of conduct. If the 'other party' never truly agrees (no guilty mind), conspiracy may not be made out on a bilateral analysis.",
+        whyWrong: [
+          "Agreement for conspiracy is not purely one-sided; there must be a true agreement with another party.",
+          "—",
+          "Attempt requires an act more than merely preparatory; agreement alone is not attempt.",
+          "Other liability (e.g., attempt or SCA 2007 depending on acts) may still arise; it’s not automatically 'no liability'."
+        ]
+      }
+    },
+    {
+      topic: "Conspiracy — withdrawal does not undo completion",
+      q: "P and S agree to commit burglary next week. The next day S changes his mind and tells P not to do it. P burgles anyway. Best analysis of S’s conspiracy liability?",
+      choices: [
+        "S is not liable because he withdrew before the burglary",
+        "S is liable for conspiracy because it was complete at agreement; withdrawal does not undo it",
+        "S is liable only if he attends the burglary",
+        "S is liable only if the burglary succeeds"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Conspiracy is complete at the point of agreement. Later withdrawal does not erase the completed conspiracy (though it may affect liability for later substantive offences).",
+        whyWrong: [
+          "Withdrawal does not undo a completed conspiracy.",
+          "—",
+          "Attendance is not required for conspiracy once agreement exists.",
+          "Completion/success of the substantive offence is not required for conspiracy."
+        ]
+      }
+    },
+    {
+      topic: "SCA 2007 — capability even if ineffective",
+      q: "S sends P a detailed 'how to burgle' guide, intending to help. The guide contains mistakes and is not actually useful. Best analysis?",
+      choices: [
+        "No offence because the guide did not actually help",
+        "Possible SCA 2007 liability because the act can be 'capable' of encouraging/assisting and the mens rea is present",
+        "No offence because words can never be assistance",
+        "Offence only if P successfully burgles"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Under the SCA 2007, the focus is on an act capable of encouraging/assisting plus the required mens rea; actual success is not always required.",
+        whyWrong: [
+          "Actual success/effectiveness is not always required.",
+          "—",
+          "Words can amount to encouragement/assistance.",
+          "Completion is not always required for SCA 2007 offences."
+        ]
+      }
+    },
+    {
+      topic: "SCA 2007 — distinguishing s44 and s45",
+      q: "S gives P burglary tools believing P will use them tonight, but S’s main aim is not that P burgles; S just thinks it will happen. Best fit?",
+      choices: [
+        "s44 only (intention to encourage/assist)",
+        "s45 (belief the offence will be committed and that the act will assist/encourage)",
+        "s46 only (belief one of a number of offences will be committed)",
+        "No offence because S did not 'want' it to happen"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "s45 captures scenarios where D believes the offence will be committed and believes his act will assist/encourage it, even if his dominant purpose is not to bring it about.",
+        whyWrong: [
+          "s44 is the clearest fit where D intends to encourage/assist; here the facts are framed as belief rather than intention.",
+          "—",
+          "s46 is for uncertainty between multiple possible offences.",
+          "Lack of a 'desire' does not prevent liability if the statutory mens rea (belief) is met."
+        ]
+      }
+    },
+    {
+      topic: "SCA 2007 — statutory defence (preventing crime / reasonableness)",
+      q: "S encourages P to commit a planned assault only so S can identify the group and alert security. S acts reasonably and successfully prevents harm before any violence occurs. Best analysis?",
+      choices: [
+        "S must be guilty because encouragement always equals liability",
+        "S may have a statutory defence under the SCA 2007 if he acted for the purpose of preventing crime and acted reasonably",
+        "S is automatically guilty of conspiracy instead",
+        "S is immune from liability in all circumstances"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "The SCA 2007 includes statutory defences in some circumstances (commonly framed around acting reasonably / to prevent crime). Whether it applies is fact-sensitive, but the best answer recognises the defence route.",
+        whyWrong: [
+          "SCA 2007 liability is not automatic if a statutory defence applies.",
+          "—",
+          "Conspiracy requires an agreement; it does not automatically replace SCA 2007 analysis.",
+          "There is no blanket immunity; it depends on satisfying the statutory defence conditions."
+        ]
+      }
+    },
+    {
+      topic: "Attempt vs SCA 2007 — who is 'attempting' what?",
+      q: "S messages P: 'Go vandalise that car tonight.' P ignores the message and does nothing. Which is the best statement?",
+      choices: [
+        "S has attempted criminal damage",
+        "S may be liable under the SCA 2007 for encouraging/assisting, even though P did nothing",
+        "S is guilty of conspiracy because he messaged P",
+        "No liability is possible because the car was not damaged"
+      ],
+      correct: 1,
+      explain: {
+        whyRight:
+          "Attempt is about D attempting the offence himself. Encouraging another is analysed under the SCA 2007, which can apply even if the principal offence is not carried out (subject to defences and elements).",
+        whyWrong: [
+          "S did not attempt to commit criminal damage himself; he tried to get P to do it.",
+          "—",
+          "Conspiracy requires agreement, not a one-way message.",
+          "Completion is not always required for SCA 2007 liability."
+        ]
+      }
     }
   ];
 
-window.quizData = {
-  title: "SQE1 Criminal Law — Inchoate Offences Quiz",
-  subtitle: "Attempt, conspiracy, and encouragement/assistance (SCA 2007).",
-  questions: originalQuestions
-};
+  window.quizData = {
+    title: "SQE1 Criminal Law — Inchoate Offences Quiz",
+    subtitle: "Attempt, conspiracy, and encouragement/assistance (SCA 2007).",
+    questions: questions
+  };
+})();
   
