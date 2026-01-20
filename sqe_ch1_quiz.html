@@ -360,6 +360,7 @@ const quizSources = [
 ];
 
 const scriptCache = new Map();
+const quizDataCache = new Map();
 
 // -------- quiz engine --------
 let questions = [];
@@ -464,9 +465,12 @@ async function loadQuiz(file, { shuffleQuestions = false } = {}) {
       data = await res.json();
     } else if (file.endsWith(".js")) {
       await loadScript(file);
-      const fallbackQuestions = typeof originalQuestions !== "undefined" ? originalQuestions : [];
-      data = window.quizData || { questions: fallbackQuestions };
-      if (window.quizData) delete window.quizData;
+      if (window.quizData) {
+        quizDataCache.set(file, window.quizData);
+        delete window.quizData;
+      }
+      data = quizDataCache.get(file);
+      if (!data) throw new Error("Quiz data missing from script");
     } else {
       throw new Error("Unsupported quiz file");
     }
@@ -498,9 +502,10 @@ function populateQuizSelect() {
 }
 
 function setProgress() {
-  const pct = ((state.idx) / (questions.length)) * 100;
+  const total = questions.length;
+  const pct = total ? (state.idx / total) * 100 : 0;
   progFill.style.width = `${pct}%`;
-  qNum.textContent = String(state.idx + 1);
+  qNum.textContent = String(total ? state.idx + 1 : 0);
   scoreEl.textContent = String(state.score);
 }
 
@@ -515,8 +520,9 @@ function render() {
   if (state.idx >= questions.length) {
     quizView.style.display = "none";
     endView.classList.add("show");
-    finalScore.textContent = `${state.score}/${questions.length}`;
-    const pct = Math.round((state.score / questions.length) * 100);
+    const total = questions.length;
+    finalScore.textContent = `${state.score}/${total}`;
+    const pct = total ? Math.round((state.score / total) * 100) : 0;
     finalMsg.textContent =
       pct >= 85 ? `Excellent. You're at ${pct}%. Move to the next chapter.` :
       pct >= 70 ? `Solid. You're at ${pct}%. Review explanations and retry shuffled.` :

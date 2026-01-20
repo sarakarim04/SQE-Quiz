@@ -759,8 +759,8 @@
 ];
 
 window.quizData = {
-    title: "SQE1 Criminal Law — Inchoate Offences Quiz",
-    subtitle: "Attempt, conspiracy, and encouragement/assistance (SCA 2007).",
+    title: "SQE1 Criminal Law — Defences Quiz",
+    subtitle: "Self-defence, intoxication, insanity, automatism, duress, and consent.",
     questions: questions
   };
 })();

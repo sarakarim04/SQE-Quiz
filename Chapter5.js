@@ -718,8 +718,8 @@
   
 
 window.quizData = {
-    title: "SQE1 Criminal Law — Inchoate Offences Quiz",
-    subtitle: "Attempt, conspiracy, and encouragement/assistance (SCA 2007).",
+    title: "SQE1 Criminal Law — Homicide Quiz",
+    subtitle: "Murder, manslaughter, causation, and partial defences.",
     questions: questions
   };
 })();
