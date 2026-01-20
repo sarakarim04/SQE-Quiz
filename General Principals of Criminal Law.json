@@ -1,0 +1,751 @@
+{
+  "title": "SQE1 Criminal Law — Chapter 1 Quiz",
+  "subtitle": "General principles (AR/MR, omissions, causation, coincidence, strict liability, burden/standard). Click an option to get instant feedback.",
+  "questions": [
+    {
+      "topic": "Actus reus — voluntariness",
+      "q": "D has an epileptic seizure while driving, loses complete control, and hits V. D had no warning symptoms. Which is most accurate?",
+      "choices": [
+        "D is liable because driving is always voluntary",
+        "D is not liable because the act was involuntary",
+        "D is liable if V’s injuries are serious",
+        "D is liable because negligence is enough for all crimes"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "If D’s movements were involuntary (complete loss of control), there may be no actus reus. On these facts (no warning), the best answer is that D is not liable on the basis of voluntariness.",
+        "whyWrong": [
+          "Driving is not 'always' voluntary if D loses all control involuntarily.",
+          "—",
+          "Serious injury does not replace the need for a voluntary actus reus.",
+          "Negligence is not sufficient for all crimes; many require intention or recklessness."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — duties",
+      "q": "D accidentally starts a small fire in his flat by dropping a lit cigarette on a mattress. He notices it and leaves without calling for help. Which duty best supports liability?",
+      "choices": ["Duty from contract", "Duty from special relationship", "Duty from creating a dangerous situation", "Duty from public office"],
+      "correct": 2,
+      "explain": {
+        "whyRight": "Where D creates a dangerous situation, he owes a duty to take reasonable steps to avert the danger (classic 'created danger' duty).",
+        "whyWrong": [
+          "No contract facts are given.",
+          "No special relationship is indicated.",
+          "—",
+          "No public office is involved."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — duties",
+      "q": "D agrees to care for his ill aunt at home, then fails to provide food or medical assistance. Which basis is strongest?",
+      "choices": ["Duty by assumption of responsibility", "No duty because it’s an omission", "Duty only if paid", "Duty only if living together is legally required"],
+      "correct": 0,
+      "explain": {
+        "whyRight": "Voluntary assumption of responsibility can create a duty to act, making omissions capable of criminal liability.",
+        "whyWrong": [
+          "—",
+          "Omissions can be criminal where a recognised legal duty exists.",
+          "Payment is not required for a duty to arise.",
+          "No rule requires living together to be legally required."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — factual",
+      "q": "D poisons V intending to kill. Before the poison takes effect, V dies instantly in an unrelated earthquake. Is D a factual cause of death?",
+      "choices": [
+        "Yes, because D intended death",
+        "Yes, because D was an operating and substantial cause",
+        "No, because “but for” D’s act V would still have died",
+        "No, because causation requires intention"
+      ],
+      "correct": 2,
+      "explain": {
+        "whyRight": "Factual causation uses the 'but for' test. Here, V would have died anyway at that moment due to the earthquake, so D is not a factual cause of death.",
+        "whyWrong": [
+          "Intention does not establish factual causation.",
+          "D’s act never operated to cause death here.",
+          "—",
+          "Causation does not require intention; it’s a separate element."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — thin skull",
+      "q": "D lightly assaults V, who has a rare condition meaning minor injuries cause fatal complications. V dies. Which statement is correct?",
+      "choices": [
+        "D is not liable because death was unforeseeable",
+        "D is liable; take victim as found",
+        "D is liable only if he knew of the condition",
+        "V’s condition breaks the chain of causation"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Thin skull rule: D takes the victim as found. Unforeseeable severity does not break causation.",
+        "whyWrong": [
+          "Unforeseeability of the extent does not negate causation under thin skull.",
+          "—",
+          "Knowledge of the condition is not required.",
+          "Victim vulnerability generally does not break causation."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — intervening acts",
+      "q": "D stabs V. At hospital, V receives negligent treatment but dies. Which is most accurate?",
+      "choices": [
+        "Medical negligence always breaks causation",
+        "Causation breaks only if treatment is the sole cause of death and D’s act becomes insignificant",
+        "Any negligence breaks causation if unforeseeable",
+        "Causation never breaks once an injury is inflicted"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Negligent medical treatment usually does not break the chain unless it is so independent and potent that D’s act becomes insignificant.",
+        "whyWrong": [
+          "Too absolute: negligence does not always break causation.",
+          "—",
+          "Unforeseeability is not the decisive test here.",
+          "Also too absolute: chains can break in rare, exceptional circumstances."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — victim acts",
+      "q": "D threatens V with minor violence. V jumps from a slow-moving car to escape and is injured. D argues V acted unreasonably. Best approach?",
+      "choices": [
+        "Chain breaks if V’s reaction is “daft”",
+        "Chain breaks if V’s reaction is foreseeable",
+        "Chain never breaks with victim acts",
+        "Chain breaks only if V intended to injure himself"
+      ],
+      "correct": 0,
+      "explain": {
+        "whyRight": "Victim reactions can break causation only if so disproportionate/daft that they are not reasonably foreseeable.",
+        "whyWrong": [
+          "—",
+          "Foreseeability tends to preserve causation, not break it.",
+          "Too absolute: victim acts can break causation in rare cases.",
+          "Victim intent to self-injure is not required for novus actus."
+        ]
+      }
+    },
+    {
+      "topic": "Coincidence — continuing act",
+      "q": "D drives onto V’s foot accidentally. V shouts. D then realises and keeps the car there to punish V. Liability for battery?",
+      "choices": [
+        "No, because MR formed after AR",
+        "Yes, because AR is a continuing act",
+        "No, because battery requires injury",
+        "Yes, but only if V’s foot breaks"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Continuing act doctrine: once D forms the mens rea while the actus reus continues, coincidence can be satisfied.",
+        "whyWrong": [
+          "Continuing act doctrine addresses this scenario.",
+          "—",
+          "Battery does not require injury; unlawful force is enough.",
+          "Serious injury is not required for battery."
+        ]
+      }
+    },
+    {
+      "topic": "Coincidence — transaction principle",
+      "q": "D attacks V, intending to kill. Thinking V is dead, D sets fire to conceal the “body”, and V dies from smoke inhalation. Best analysis?",
+      "choices": [
+        "No murder because intention existed only during the first act",
+        "Murder possible because acts form one transaction",
+        "No liability because the fire is a new act",
+        "Manslaughter only, because intention must be at the moment of death"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Where there is a series of acts in one transaction with the relevant mens rea, courts can treat it as one continuous sequence for coincidence.",
+        "whyWrong": [
+          "Too narrow: transaction principle can apply.",
+          "—",
+          "Not necessarily: the sequence can be treated as one transaction.",
+          "Not required in that rigid way under transaction analysis."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — contract duty",
+      "q": "A level crossing gatekeeper is paid to close the gate. He leaves it open and a person is killed by a train. Basis for duty?",
+      "choices": [
+        "Statutory duty only",
+        "Duty from contract",
+        "Duty from creation of danger only",
+        "No duty because omission"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "A contractual duty can found liability for an omission where the contract requires action and the omission causes harm.",
+        "whyWrong": [
+          "A statutory duty is not required if a contractual duty exists.",
+          "—",
+          "Created danger not necessary on these facts.",
+          "Incorrect where a legal duty exists."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — public office duty",
+      "q": "A police officer witnesses a violent assault but deliberately does nothing, although able to intervene. Liability can arise from:",
+      "choices": [
+        "Duty of special relationship",
+        "Duty of public office",
+        "Duty of contract (unless paid overtime)",
+        "No duty in criminal law"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Public officers can be liable for wilful neglect of duty where they deliberately fail to act.",
+        "whyWrong": [
+          "Special relationship isn’t the key category here.",
+          "—",
+          "Overtime has nothing to do with the existence of the duty.",
+          "Incorrect: duties can arise in recognised categories."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — legal",
+      "q": "D’s punch causes V to fall. V later dies due to complications to which the fall contributed. For legal causation, D’s act must be:",
+      "choices": [
+        "The sole cause",
+        "A more than minimal cause (operating and substantial)",
+        "The last cause in time",
+        "Foreseeable as the only possible cause"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Legal causation: D’s act must be a significant contribution (more than minimal), typically described as operating and substantial.",
+        "whyWrong": [
+          "Not required: there can be multiple causes.",
+          "—",
+          "Being last in time is not the test.",
+          "Not required: causation doesn’t demand foreseeability as the only possible cause."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — intervening third party",
+      "q": "D wounds V. A stranger deliberately shoots V in hospital, killing him. Most accurate?",
+      "choices": [
+        "D remains liable because he started the sequence",
+        "The deliberate third-party act is likely a novus actus breaking causation",
+        "Causation never breaks after a wound",
+        "D is liable only if he foresaw a shooting"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "A free, deliberate, and informed act by a third party is typically an independent intervening cause that can break the chain.",
+        "whyWrong": [
+          "Starting the sequence isn’t enough if the chain is broken by an independent act.",
+          "—",
+          "Too absolute: chains can break.",
+          "Foreseeability isn’t the sole determinant; deliberate acts often break causation regardless."
+        ]
+      }
+    },
+    {
+      "topic": "Strict liability — policy",
+      "q": "Which factor most strongly suggests Parliament intended strict liability for an offence element?",
+      "choices": [
+        "Offence is truly serious with stigma and heavy imprisonment",
+        "Offence is regulatory/public welfare with modest penalty",
+        "The statute is silent on MR",
+        "The offence is common law"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Strict liability is more common in regulatory/public welfare offences, often with lower penalties and a focus on protection rather than stigma.",
+        "whyWrong": [
+          "Serious/stigmatising offences usually push toward requiring MR.",
+          "—",
+          "Silence generally triggers a presumption of MR, not strict liability.",
+          "Common law offences usually require MR."
+        ]
+      }
+    },
+    {
+      "topic": "Strict liability — presumption",
+      "q": "A statute creates an offence but does not mention fault. What is the default judicial approach?",
+      "choices": [
+        "Presume strict liability unless stated otherwise",
+        "Presume mens rea is required unless clearly excluded",
+        "Treat it as civil liability",
+        "Require intention only (never recklessness)"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "There is a strong presumption that mens rea is required unless Parliament clearly indicates otherwise.",
+        "whyWrong": [
+          "That reverses the presumption.",
+          "—",
+          "It remains a criminal offence.",
+          "Mens rea can be recklessness depending on the offence; not intention-only."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — factual",
+      "q": "D negligently hits V with a car. V would have died the same day from an unrelated condition regardless. Factual causation?",
+      "choices": [
+        "Yes, “but for” is satisfied",
+        "No, because V would have died anyway",
+        "Yes, because negligence is enough for causation",
+        "No, because causation requires intention"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "If V would have died anyway at that time, the 'but for' test is not satisfied.",
+        "whyWrong": [
+          "Incorrect: but-for fails if death would happen anyway at that time.",
+          "—",
+          "Negligence does not replace the but-for test.",
+          "Causation does not require intention."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — special relationship",
+      "q": "Which relationship most clearly creates a duty in criminal law?",
+      "choices": ["Close friends", "Parent to young child", "Neighbours", "Classmates"],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Parent-child (or guardian-child) relationships are classic categories where duties are recognised.",
+        "whyWrong": [
+          "Friendship does not automatically create a legal duty.",
+          "—",
+          "Neighbourhood proximity alone does not create a duty.",
+          "Classmate status does not create a duty."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions + coincidence",
+      "q": "D accidentally knocks V into a river. D then decides not to rescue V, hoping V will drown. Best analysis?",
+      "choices": [
+        "No liability because drowning is an omission",
+        "Liability possible because once D creates danger, duty to act arises",
+        "No liability because intention formed after the act",
+        "Liability only if D is a strong swimmer"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Creating danger can generate a duty to take reasonable steps; failure to do so can be an actionable omission, and mens rea can coincide with the ongoing duty situation.",
+        "whyWrong": [
+          "Omissions can be criminal where a duty exists.",
+          "—",
+          "Coincidence can be satisfied via continuing duty/continuing situation.",
+          "Strength may affect what is reasonable, but duty does not depend on being a strong swimmer."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — thin skull (beliefs)",
+      "q": "D stabs V. Doctors could save V with a transfusion, but V refuses for religious reasons and dies. Causation?",
+      "choices": [
+        "Chain breaks because refusal is unreasonable",
+        "Chain breaks because refusal is unforeseeable",
+        "Chain does not break; take victim as found",
+        "Chain breaks only if doctors agree refusal is irrational"
+      ],
+      "correct": 2,
+      "explain": {
+        "whyRight": "Thin skull applies: D takes the victim as found, including beliefs; refusal of treatment typically does not break causation.",
+        "whyWrong": [
+          "Unreasonableness is not the test here.",
+          "Foreseeability is not required in that way under thin skull reasoning.",
+          "—",
+          "Medical opinions on rationality do not determine legal causation here."
+        ]
+      }
+    },
+    {
+      "topic": "AR/MR basics",
+      "q": "Which best describes actus reus?",
+      "choices": ["The guilty mind", "The external elements of the offence", "The defendant’s motive", "The reasonableness of the defendant’s behaviour"],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Actus reus is the external element(s): conduct, circumstances, and sometimes result.",
+        "whyWrong": [
+          "That describes mens rea.",
+          "—",
+          "Motive is different from mens rea and not the actus reus.",
+          "Reasonableness is not a general definition of actus reus."
+        ]
+      }
+    },
+    {
+      "topic": "MR and motive",
+      "q": "D steals money to pay for a child’s urgent medical treatment. Which is correct?",
+      "choices": [
+        "Good motive prevents MR",
+        "Motive may be relevant to sentencing, not whether theft MR is present",
+        "Motive negates dishonesty",
+        "Motive makes it a civil matter"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Motive usually does not negate mens rea; it may be relevant to sentencing/mitigation.",
+        "whyWrong": [
+          "Motive does not automatically prevent mens rea.",
+          "—",
+          "A good motive does not automatically negate dishonesty.",
+          "It remains criminal, not civil."
+        ]
+      }
+    },
+    {
+      "topic": "Burden/standard — elements",
+      "q": "In criminal trials, the prosecution generally must prove the elements of the offence:",
+      "choices": ["On balance of probabilities", "Beyond reasonable doubt", "To a prima facie standard only", "With absolute certainty"],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Criminal standard is beyond reasonable doubt (often phrased as 'so that you are sure').",
+        "whyWrong": [
+          "This is the civil standard.",
+          "—",
+          "Prima facie is not enough for conviction.",
+          "Absolute certainty is not required."
+        ]
+      }
+    },
+    {
+      "topic": "Burden/standard — defences",
+      "q": "D raises self-defence with some supporting evidence. Who must ultimately disprove self-defence (usually)?",
+      "choices": [
+        "D, beyond reasonable doubt",
+        "D, on balance of probabilities",
+        "Prosecution, beyond reasonable doubt",
+        "Judge, on balance of probabilities"
+      ],
+      "correct": 2,
+      "explain": {
+        "whyRight": "Typically the defendant has an evidential burden; once raised, the prosecution must disprove beyond reasonable doubt.",
+        "whyWrong": [
+          "Defendant usually does not carry this burden for self-defence.",
+          "Defendant usually does not carry a legal burden for self-defence.",
+          "—",
+          "Judges do not bear the burden."
+        ]
+      }
+    },
+    {
+      "topic": "Burden/standard — exception",
+      "q": "Which defence commonly places a legal burden on the defendant?",
+      "choices": ["Self-defence", "Insanity", "Mistake", "Alibi"],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Insanity traditionally places a legal burden on the defendant (balance of probabilities).",
+        "whyWrong": [
+          "Self-defence is usually for the prosecution to disprove once raised.",
+          "—",
+          "Mistake is typically part of evidential issues; prosecution disproves relevant points.",
+          "Alibi is a factual contention; prosecution must still prove guilt."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — created danger",
+      "q": "D creates a small fire accidentally. What is the duty?",
+      "choices": ["To guarantee no harm occurs", "To take reasonable steps to avert the danger", "To confess immediately", "No duty because it was accidental"],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Duty is to take reasonable steps once D becomes aware of the danger created.",
+        "whyWrong": [
+          "No strict guarantee of outcome is imposed.",
+          "—",
+          "Confession is not the legal duty here.",
+          "Accidental creation can still trigger a duty once aware."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — timing",
+      "q": "D inflicts a serious wound. V dies weeks later after complications. Which is correct?",
+      "choices": [
+        "Time lapse automatically breaks causation",
+        "Time lapse is irrelevant; focus is on operating and substantial cause",
+        "D cannot be liable unless death is immediate",
+        "D is liable only if he intended death at the time of death"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Time lapse does not automatically break causation; the key is whether D’s act remains a substantial contribution.",
+        "whyWrong": [
+          "Time alone doesn’t break the chain.",
+          "—",
+          "Immediate death is not required.",
+          "Mens rea timing is handled via coincidence doctrines; not in that rigid form."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — continuing situation",
+      "q": "D accidentally knocks over a lamp, starting a fire. He notices smoke but goes to bed. Most accurate?",
+      "choices": [
+        "No AR because starting the fire was accidental",
+        "AR can include the omission to act once duty arises",
+        "MR is irrelevant because fire is strict liability",
+        "Duty arises only if D owns the property"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Once aware of the danger he created, D’s omission to take reasonable steps can form part of the actus reus.",
+        "whyWrong": [
+          "Accident doesn’t prevent later omission liability.",
+          "—",
+          "No general strict liability rule applies here.",
+          "Ownership is not required for the duty to arise."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — victim acts",
+      "q": "D makes a mild threat from a distance. V, in panic, jumps from a high bridge and is injured. Best statement?",
+      "choices": [
+        "Causation always remains because D threatened V",
+        "Causation may break if V’s reaction is so disproportionate it’s unforeseeable/daft",
+        "Causation breaks whenever V chooses to flee",
+        "Causation depends only on whether D intended injury"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Victim reactions can break the chain if they are so disproportionate that they are not reasonably foreseeable.",
+        "whyWrong": [
+          "Too absolute; chains can break in exceptional victim reaction cases.",
+          "—",
+          "Not whenever; depends on foreseeability/proportionality.",
+          "Intention does not control causation analysis."
+        ]
+      }
+    },
+    {
+      "topic": "Strict liability — mistake",
+      "q": "D sells alcohol to a minor under a strict liability offence as to age. D genuinely believed the buyer was 18. Which is most accurate?",
+      "choices": [
+        "Genuine belief always provides a defence",
+        "If strict liability as to age, MR (and mistake) may be irrelevant to that element",
+        "Mistake always breaks actus reus",
+        "D is not liable because he lacked intention"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "If the age element is strict liability, an honest mistake about age may not help (depending on statutory construction).",
+        "whyWrong": [
+          "Not always; strict liability may defeat mistake.",
+          "—",
+          "Mistake doesn’t 'break actus reus' as a rule.",
+          "Intention may not be required for strict liability elements."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — when it matters",
+      "q": "Which scenario most clearly requires causation analysis?",
+      "choices": [
+        "D lies to V about his age",
+        "D punches V; V later dies after complications linked to the punch",
+        "D merely possesses an illegal item",
+        "D attempts but fails to pickpocket"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Result crimes (e.g., death) require causation analysis (factual + legal causation).",
+        "whyWrong": [
+          "Not necessarily a result crime requiring causation.",
+          "—",
+          "Possession offences are typically conduct/circumstance based.",
+          "Attempts do not require the completed result."
+        ]
+      }
+    },
+    {
+      "topic": "Coincidence — general rule",
+      "q": "Which statement best reflects the general rule on coincidence?",
+      "choices": [
+        "AR and MR must never coincide",
+        "AR and MR must coincide, subject to doctrines like continuing act/transaction",
+        "Coincidence applies only to homicide",
+        "Coincidence applies only to strict liability offences"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "General rule: AR and MR coincide, with recognised solutions like continuing act and transaction principles.",
+        "whyWrong": [
+          "Incorrect: they generally must coincide.",
+          "—",
+          "Coincidence is a general principle across offences.",
+          "Strict liability is different; coincidence still matters where MR exists."
+        ]
+      }
+    },
+    {
+      "topic": "Omissions — general rule",
+      "q": "What is the default position on omissions in criminal law?",
+      "choices": [
+        "Omissions are always criminal",
+        "Omissions are never criminal",
+        "Omissions are generally not criminal unless a legal duty to act exists",
+        "Omissions are criminal only if the defendant is morally at fault"
+      ],
+      "correct": 2,
+      "explain": {
+        "whyRight": "General rule: no liability for omissions unless a recognised legal duty exists.",
+        "whyWrong": [
+          "Too absolute.",
+          "Too absolute.",
+          "—",
+          "Moral fault is not the test; legal duty is."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — legal threshold",
+      "q": "For legal causation in a result crime, D’s contribution must be:",
+      "choices": [
+        "Trivial is enough",
+        "More than minimal (a significant contribution)",
+        "Exactly 50% of the cause",
+        "The immediate cause only"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Legal causation requires more than a minimal contribution (operating/substantial).",
+        "whyWrong": [
+          "Trivial is not enough.",
+          "—",
+          "No 50% requirement exists.",
+          "Not limited to immediate cause only."
+        ]
+      }
+    },
+    {
+      "topic": "Causation — chain breaking",
+      "q": "Which is most likely to break the chain of causation?",
+      "choices": [
+        "Normal medical treatment complications",
+        "Victim’s foreseeable escape attempt",
+        "A free, deliberate, informed act by a third party that becomes the direct cause of death",
+        "Victim’s unusual vulnerability"
+      ],
+      "correct": 2,
+      "explain": {
+        "whyRight": "A free, deliberate, informed third-party act is a classic candidate for novus actus interveniens.",
+        "whyWrong": [
+          "Usually does not break the chain.",
+          "Foreseeable reactions usually do not break the chain.",
+          "—",
+          "Thin skull: vulnerability doesn’t break causation."
+        ]
+      }
+    },
+    {
+      "topic": "Mens rea — recklessness",
+      "q": "Which best fits modern subjective recklessness?",
+      "choices": [
+        "D fails to think about a risk that a reasonable person would have foreseen",
+        "D foresees a risk and unreasonably goes on to take it",
+        "D intends the risk to occur",
+        "D is careless and that is always enough"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Subjective recklessness: foresight of risk + unreasonable taking of that risk.",
+        "whyWrong": [
+          "That describes objective negligence-type reasoning, not modern subjective recklessness.",
+          "—",
+          "Intention is different from recklessness.",
+          "Carelessness alone is not always enough (depends on offence)."
+        ]
+      }
+    },
+    {
+      "topic": "Mens rea — intention (oblique)",
+      "q": "Oblique intention is most closely associated with which idea?",
+      "choices": [
+        "Result is a virtually certain consequence and D appreciates that",
+        "Result is merely possible and D doesn’t care",
+        "Result is unforeseeable but happens anyway",
+        "Result is morally blameworthy"
+      ],
+      "correct": 0,
+      "explain": {
+        "whyRight": "Oblique intention: virtual certainty + appreciation of that certainty.",
+        "whyWrong": [
+          "—",
+          "That describes recklessness at most.",
+          "Unforeseeability is not intention.",
+          "Moral blameworthiness isn’t the legal test."
+        ]
+      }
+    },
+    {
+      "topic": "Burden — evidential vs legal",
+      "q": "What does an evidential burden on the defendant usually mean?",
+      "choices": [
+        "D must prove the defence beyond reasonable doubt",
+        "D must raise some evidence capable of supporting the defence",
+        "D must persuade the jury on balance of probabilities",
+        "D must testify"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Evidential burden: produce sufficient evidence to put the defence in issue; prosecution then must disprove (usually).",
+        "whyWrong": [
+          "That’s not what evidential burden means.",
+          "—",
+          "That’s a legal burden standard, not evidential.",
+          "D is not always required to testify."
+        ]
+      }
+    },
+    {
+      "topic": "Strict liability — effect",
+      "q": "If an offence is strict liability as to a particular element, the consequence is:",
+      "choices": [
+        "Prosecution must still prove intention for that element",
+        "Defendant’s honest mistake about that element may not provide a defence",
+        "Defendant is never liable if they took reasonable care",
+        "The offence becomes civil"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Strict liability means no mens rea is required for that element; honest mistake may be irrelevant unless statute provides otherwise.",
+        "whyWrong": [
+          "Strict liability removes the need for MR for that element.",
+          "—",
+          "Reasonable care is not always a defence in strict liability.",
+          "It remains criminal."
+        ]
+      }
+    },
+    {
+      "topic": "Voluntariness — general principle",
+      "q": "Why does criminal law generally require voluntariness?",
+      "choices": [
+        "Because punishment is only for morally bad people",
+        "Because actus reus usually requires a voluntary act (control over conduct)",
+        "Because mens rea is never required",
+        "Because omissions are always excluded"
+      ],
+      "correct": 1,
+      "explain": {
+        "whyRight": "Voluntariness supports the requirement that the actus reus is a product of D’s controlled conduct.",
+        "whyWrong": [
+          "Moral judgment is not the legal test.",
+          "—",
+          "Mens rea is often required; this is unrelated.",
+          "Omissions can be included when a duty exists."
+        ]
+      }
+    }
+  ]
+}
