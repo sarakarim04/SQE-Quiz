@@ -340,8 +340,14 @@ const quizSources = [
   {
     label: "Chapter 1: General Principles",
     file: "General Principals of Criminal Law.json"
+  },
+  {
+    label: "Parties to a Crime",
+    file: "PartiesToACrime.js"
   }
 ];
+
+const scriptCache = new Map();
 
 // -------- quiz engine --------
 let questions = [];
@@ -422,12 +428,36 @@ function applyQuizMeta(data) {
   document.title = title;
 }
 
+function loadScript(file) {
+  if (scriptCache.has(file)) return scriptCache.get(file);
+  const promise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = file;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Quiz script load failed"));
+    document.head.appendChild(script);
+  });
+  scriptCache.set(file, promise);
+  return promise;
+}
+
 async function loadQuiz(file, { shuffleQuestions = false } = {}) {
   if (!file) return;
   try {
-    const res = await fetch(file);
-    if (!res.ok) throw new Error("Quiz fetch failed");
-    const data = await res.json();
+    let data;
+    if (file.endsWith(".json")) {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error("Quiz fetch failed");
+      data = await res.json();
+    } else if (file.endsWith(".js")) {
+      await loadScript(file);
+      const fallbackQuestions = typeof originalQuestions !== "undefined" ? originalQuestions : [];
+      data = window.quizData || { questions: fallbackQuestions };
+      if (window.quizData) delete window.quizData;
+    } else {
+      throw new Error("Unsupported quiz file");
+    }
     const list = Array.isArray(data.questions) ? data.questions : [];
     applyQuizMeta(data);
     buildQuestions(list, { shuffleQuestions });
