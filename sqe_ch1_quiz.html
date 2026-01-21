@@ -350,17 +350,18 @@ const quizSources = [
     file: "incohate offences.js"
   },
   {
-    label: "Chater 4",
+    label: "Chapter 4: Defences",
     file: "Chapter4.js"
   },
   {
-    label: "Chater 5",
+    label: "Chapter 5: Homicide",
     file: "Chapter5.js"
   }
 ];
 
 const scriptCache = new Map();
 const quizDataCache = new Map();
+let loadSeq = 0;
 
 // -------- quiz engine --------
 let questions = [];
@@ -456,6 +457,7 @@ function loadScript(file) {
 }
 
 async function loadQuiz(file, { shuffleQuestions = false } = {}) {
+  const loadId = ++loadSeq;
   if (!file) return;
   try {
     let data;
@@ -474,11 +476,13 @@ async function loadQuiz(file, { shuffleQuestions = false } = {}) {
     } else {
       throw new Error("Unsupported quiz file");
     }
+    if (loadId !== loadSeq) return;
     const list = Array.isArray(data.questions) ? data.questions : [];
     applyQuizMeta(data);
     buildQuestions(list, { shuffleQuestions });
     currentQuizFile = file;
   } catch (err) {
+    if (loadId !== loadSeq) return;
     resetState(0);
     qTotal.textContent = "0";
     quizView.style.display = "block";
