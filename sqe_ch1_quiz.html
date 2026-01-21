@@ -361,6 +361,7 @@ const quizSources = [
 
 const scriptCache = new Map();
 const quizDataCache = new Map();
+const cacheBust = Date.now();
 let loadSeq = 0;
 
 // -------- quiz engine --------
@@ -446,7 +447,7 @@ function loadScript(file) {
   if (scriptCache.has(file)) return scriptCache.get(file);
   const promise = new Promise((resolve, reject) => {
     const script = document.createElement("script");
-    script.src = file;
+    script.src = `${file}?v=${cacheBust}`;
     script.async = true;
     script.onload = () => resolve();
     script.onerror = () => reject(new Error("Quiz script load failed"));
@@ -462,7 +463,7 @@ async function loadQuiz(file, { shuffleQuestions = false } = {}) {
   try {
     let data;
     if (file.endsWith(".json")) {
-      const res = await fetch(file);
+      const res = await fetch(`${file}?v=${cacheBust}`);
       if (!res.ok) throw new Error("Quiz fetch failed");
       data = await res.json();
     } else if (file.endsWith(".js")) {
