@@ -1,758 +1,653 @@
 (() => {
   const questions = [
   {
-    topic: "SRA Code of Conduct — 1: Maintaining trust and acting fairly (discrimination)",
-    q: "A solicitor refuses to act for a client because of the client’s religion, saying it conflicts with the solicitor’s personal views. Under the SRA Code of Conduct, which is most accurate?",
+    topic: "SRA Code of Conduct — structure (individual vs firm)",
+    q: "Which statement best reflects how the SRA Codes of Conduct are organised under the SRA Standards and Regulations?",
     choices: [
-      "Permitted if the solicitor gives notice and suggests another firm",
-      "Permitted provided the solicitor is otherwise polite",
-      "Not permitted: you must not unfairly discriminate by allowing personal views to affect professional relationships",
-      "Permitted if the matter is outside the solicitor’s preferred practice area"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires you not to unfairly discriminate by allowing personal views to affect professional relationships and the way you provide services (Maintaining trust and acting fairly).",
-      whyWrong: [
-        "Signposting does not make unfair discrimination acceptable.",
-        "Being polite does not cure unfair discrimination.",
-        "—",
-        "Practice-area preference is different; the issue here is discrimination driven by personal views."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 1: Maintaining trust and acting fairly (unfair advantage)",
-    q: "You notice an unrepresented opponent has misunderstood a deadline and will miss it. You quietly plan to take advantage without correcting the obvious misunderstanding. Which statement is most accurate under the Code?",
-    choices: [
-      "Acceptable: you owe no duties to an opponent",
-      "Acceptable if you do not actively mislead them",
-      "Potential breach: you must not abuse your position by taking unfair advantage of others",
-      "Acceptable if your client instructed you to do so"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code prohibits abusing your position by taking unfair advantage of clients or others; exploiting an obvious mistake can cross that line.",
-      whyWrong: [
-        "You still have professional obligations toward others (including opponents).",
-        "Avoiding explicit lies does not justify unfair advantage.",
-        "—",
-        "Client instructions cannot justify unethical conduct."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 1: Maintaining trust and acting fairly (undertakings)",
-    q: "You give an undertaking to send redemption funds within 24 hours. The fee earner forgets. Under the Code, which is most accurate?",
-    choices: [
-      "No issue if it was a junior who forgot",
-      "You must perform undertakings within the agreed timescale (or a reasonable time if none is agreed)",
-      "Undertakings are only enforceable if in writing",
-      "An undertaking can be ignored if it becomes inconvenient"
+      "There is only one Code of Conduct that applies identically to individuals and firms",
+      "There is a Code for individuals (solicitors/RELs/RFLs) and a separate Code for firms, each addressing different responsibilities",
+      "The Code of Conduct applies only to solicitors in court work; transactional work is excluded",
+      "The Codes are optional guidance and apply only if the Principles do not cover the issue"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "The Code requires you to perform all undertakings given by you within the agreed timescale (or if none is agreed, within a reasonable time).",
+        "The framework includes a Code of Conduct for individuals and a separate Code of Conduct for firms, reflecting different ethical and systems-based duties.",
       whyWrong: [
-        "Responsibility is not avoided because someone junior forgot.",
+        "There are separate Codes for individuals and for firms.",
         "—",
-        "Undertakings can be binding even if not in a formal written document; the Code focuses on performance.",
-        "Inconvenience does not justify non-performance."
+        "The Codes apply across practice areas, not only disputes.",
+        "The Codes are part of the binding regulatory framework, not optional guidance."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 1: Maintaining trust and acting fairly (misleading by omission)",
-    q: "A client asks, 'Have you filed the application?' You have not, but you reply: 'We’re progressing it' intending them to think it has been filed. Which is most accurate under the Code?",
+    topic: "Code (Solicitors) — undertakings",
+    q: "You give an undertaking to send a signed document to the other side within 7 days. You then forget and send it 3 weeks later without explanation. What is the most accurate Code-based issue?",
+    choices: [
+      "No issue: undertakings are informal and only binding if in writing",
+      "Likely breach: undertakings must be performed within the agreed timescale (or a reasonable time if none was agreed)",
+      "No issue: delay is acceptable as long as your client benefits",
+      "Only the firm is responsible for undertakings; individuals are not"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes treat undertakings as a serious professional obligation that must be performed within the agreed timescale (or a reasonable time where none is agreed).",
+      whyWrong: [
+        "Undertakings are treated as binding professional commitments.",
+        "—",
+        "Client advantage does not excuse failure to perform an undertaking properly.",
+        "Individuals can be responsible for undertakings they give."
+      ]
+    }
+  },
+  {
+    topic: "Code — fairness (taking unfair advantage)",
+    q: "You notice an unrepresented party has misunderstood a key deadline. You decide not to correct it because it will give your client a tactical advantage. Which is the best Code analysis?",
+    choices: [
+      "Acceptable: your only duty is to maximise your client’s tactical advantage",
+      "Likely breach: the Code expects you not to take unfair advantage of others",
+      "Acceptable if you do not make any false statements",
+      "Acceptable if the unrepresented party is not your client"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes emphasise maintaining trust and acting fairly, including not taking unfair advantage of clients or others.",
+      whyWrong: [
+        "Client best interests does not justify unfair advantage or sharp practice.",
+        "—",
+        "Avoiding literal lies does not make unfair advantage acceptable.",
+        "Duties of fairness can apply even when dealing with non-clients."
+      ]
+    }
+  },
+  {
+    topic: "Code — discrimination",
+    q: "A partner tells you to stop acting for clients from a particular ethnic group because they are 'too much hassle'. What is the most accurate regulatory analysis?",
+    choices: [
+      "Permissible: firms can choose clients for any reason",
+      "Likely breach: the Codes prohibit unfair discrimination affecting professional relationships and service delivery",
+      "Permissible if the decision is framed as a commercial choice",
+      "Only an employment-law issue, not a regulatory one"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes require maintaining trust and acting fairly, including not unfairly discriminating in professional relationships and the provision of services.",
+      whyWrong: [
+        "Firms have discretion, but not to discriminate unfairly in a way prohibited by the Codes.",
+        "—",
+        "A commercial label does not cure discriminatory conduct.",
+        "It can be both a regulatory and an equality-law issue."
+      ]
+    }
+  },
+  {
+    topic: "Conflicts — core rule",
+    q: "You are asked to act for Buyer and Seller in the same transaction. Buyer wants the lowest price; Seller wants the highest. What is the best starting point under the Codes?",
+    choices: [
+      "Act for both as long as they consent after the transaction completes",
+      "Assume a conflict (or significant risk of conflict) and only proceed if a permitted exception applies and safeguards are met",
+      "Act for both because it is more efficient and saves costs",
+      "Act for both if you promise to be neutral"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The starting point is identifying a conflict (or significant risk) and only proceeding where the Codes permit and safeguards/conditions are met.",
+      whyWrong: [
+        "Consent timing does not solve a conflict; the analysis must be done before acting.",
+        "—",
+        "Efficiency/cost-saving does not override conflicts duties.",
+        "Neutrality does not remove the underlying conflict of interest."
+      ]
+    }
+  },
+  {
+    topic: "Conflicts — significant risk",
+    q: "You acted for Client A last year. You are now asked to act for Client B in a matter where B’s objectives could harm A’s confidential interests. Under the Codes, what is the key issue to consider first?",
+    choices: [
+      "Whether Client B is willing to pay higher fees",
+      "Whether there is a conflict or a significant risk of conflict between current and former clients, and whether you can lawfully proceed",
+      "Whether the matter is contentious or non-contentious",
+      "Whether you can complete the work quickly"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes require you to identify conflicts (including those involving former clients) and significant risks of conflict, then decide if any permitted basis to proceed exists.",
+      whyWrong: [
+        "Fees are irrelevant to the conflicts analysis.",
+        "—",
+        "Contentious vs non-contentious may affect detail, but conflicts analysis comes first.",
+        "Speed is irrelevant to conflicts compliance."
+      ]
+    }
+  },
+  {
+    topic: "Confidentiality — general rule",
+    q: "A journalist asks you to confirm you act for a celebrity client. The client has not consented. Which is the most accurate statement under the Codes?",
+    choices: [
+      "You may confirm representation because it is not legal advice",
+      "You must keep the client’s affairs confidential unless disclosure is required/permitted by law or the client consents",
+      "You may disclose if the journalist already suspects it",
+      "You may disclose if it helps the firm’s marketing"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes impose a duty of confidentiality over current and former clients’ affairs unless disclosure is required/permitted by law or the client consents.",
+      whyWrong: [
+        "Client affairs include who you act for in many contexts; confidentiality is not limited to advice content.",
+        "—",
+        "Third-party suspicion does not create permission to disclose.",
+        "Marketing benefit does not justify breaching confidentiality."
+      ]
+    }
+  },
+  {
+    topic: "Confidentiality — regulator/ombudsman tension",
+    q: "The Legal Ombudsman requests information about a complaint. Your client refuses consent to disclose. Which is the best analysis?",
+    choices: [
+      "You must always refuse because confidentiality is absolute",
+      "You must consider confidentiality, but also any legal/regulatory obligation to cooperate with the Ombudsman, disclosing only what is required/permitted",
+      "You may disclose everything to defend yourself because complaints are exempt",
+      "You should ignore the request unless a court order is produced"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "There can be competing duties: confidentiality vs obligations to cooperate with the Legal Ombudsman/regulatory arrangements. The correct approach is to identify what is required/permitted and disclose no more than necessary.",
+      whyWrong: [
+        "Confidentiality is strong but not always absolute; law/regulatory obligations can permit/require disclosure.",
+        "—",
+        "Complaints do not give you a blank cheque to disclose everything.",
+        "You must engage appropriately with the request and the applicable rules."
+      ]
+    }
+  },
+  {
+    topic: "Code — service and competence",
+    q: "You take on a specialist tax matter you do not understand and do not seek supervision or refer it. The client suffers loss. What is the most accurate Code issue?",
+    choices: [
+      "No issue if the client signed a disclaimer",
+      "Likely breach: failing to provide a proper standard of service/competence and failing to ensure the work is competently carried out",
+      "No issue if you worked hard and tried your best",
+      "Only a negligence issue; ethics is irrelevant"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes expect competent service. Taking on work outside competence without proper supervision/support risks regulatory breach as well as civil liability.",
+      whyWrong: [
+        "A disclaimer rarely cures lack of competence/supervision for regulatory purposes.",
+        "—",
+        "Effort does not replace competence and proper safeguards.",
+        "It can be both a negligence and a regulatory/ethics issue."
+      ]
+    }
+  },
+  {
+    topic: "Firm Code — governance and controls",
+    q: "A firm repeatedly misses limitation deadlines because it has no diary system, no training, and no supervision. Which is the best firm-level regulatory analysis?",
+    choices: [
+      "Only the individual fee earners are responsible; the firm has no duty here",
+      "Likely breach: the firm must have effective governance, systems and controls to ensure compliance and competent service delivery",
+      "No breach if clients are compensated afterwards",
+      "No breach if the firm is small"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The firm Code focuses on systems and controls—weak supervision/governance leading to repeated failures is a classic firm-level breach scenario.",
+      whyWrong: [
+        "Firms have independent duties to maintain effective systems and supervision.",
+        "—",
+        "Compensation may mitigate harm but does not remove regulatory failings.",
+        "Firm size does not remove the duty to have effective controls."
+      ]
+    }
+  },
+  {
+    topic: "Code — undertakings (wording matters)",
+    q: "You email: 'We will definitely pay the outstanding search fees by Friday.' The other side relies on it as an undertaking. Which is the most accurate risk point?",
+    choices: [
+      "There is no risk because only documents titled 'Undertaking' count",
+      "Risk: you may have created an undertaking by clear commitment, so you must treat it as binding and comply",
+      "No risk if your client later refuses to pay",
+      "Risk only arises if the commitment was made in court"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Undertakings can arise from clear professional commitments. If your wording amounts to an undertaking, it must be performed within the promised timeframe.",
+      whyWrong: [
+        "Formality/title is not decisive; substance and reliance matter.",
+        "—",
+        "Client refusal does not automatically excuse breach of an undertaking you gave.",
+        "Undertakings are not limited to court settings."
+      ]
+    }
+  },
+  {
+    topic: "Code — acting fairly (abuse of position)",
+    q: "A vulnerable client is pressured into signing an engagement letter they do not understand. You notice but proceed anyway. Which is the best Code issue?",
+    choices: [
+      "No issue if the fee is reasonable",
+      "Likely breach: taking unfair advantage/abusing position and failing to act fairly toward the client",
+      "No issue if the client appears calm",
+      "Only a consumer-law issue"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes emphasise acting fairly and not abusing your position or taking unfair advantage of clients, particularly where vulnerability is apparent.",
+      whyWrong: [
+        "A reasonable fee does not cure unfair pressure or abuse of position.",
+        "—",
+        "Apparent calm does not remove the duty to ensure fairness and understanding.",
+        "It can be a regulatory issue as well as other legal issues."
+      ]
+    }
+  },
+  {
+    topic: "Code — honesty vs sharp practice",
+    q: "You avoid making false statements but deliberately craft correspondence to create a misleading impression. What is the best regulatory lens?",
+    choices: [
+      "Acceptable because it is not a lie",
+      "Potential breach: honesty/integrity expectations can be engaged by misleading impressions and sharp practice",
+      "Acceptable if it helps your client settle",
+      "Acceptable if the opponent has solicitors"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The Codes are concerned with fair dealing and trust; misleading impressions can engage honesty/integrity expectations even without an outright lie.",
+      whyWrong: [
+        "Regulatory standards go beyond literal truthfulness in many situations.",
+        "—",
+        "Settlement objectives do not justify misleading conduct.",
+        "Opponent representation does not permit sharp practice."
+      ]
+    }
+  },
+  {
+    topic: "Code — confidentiality (former clients)",
+    q: "A former client’s information would help your current client in a negotiation. The former client has not consented. What is the best Code analysis?",
+    choices: [
+      "You may use it because the retainer ended",
+      "You must keep former clients’ affairs confidential unless disclosure is required/permitted by law or the former client consents",
+      "You may use it if it will not be discovered",
+      "You may use it if it improves your fee prospects"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Confidentiality extends to former clients. You cannot use/disclose it unless legally permitted/required or consent is obtained.",
+      whyWrong: [
+        "Confidentiality does not end with the retainer.",
+        "—",
+        "Risk of discovery is irrelevant to compliance.",
+        "Commercial benefit is irrelevant."
+      ]
+    }
+  },
+  {
+    topic: "Firm Code — client complaints",
+    q: "A firm has no complaints policy, no named complaints handler, and routinely ignores written complaints. What is the best firm-level analysis?",
+    choices: [
+      "No issue as long as the firm offers refunds informally",
+      "Likely breach: firms must have appropriate systems for handling complaints and regulatory accountability",
+      "Only the Legal Ombudsman deals with complaints; the SRA has no interest",
+      "No issue if the firm is very busy"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Complaints handling and accountability are firm-level system obligations; ignoring complaints is a classic compliance failure.",
+      whyWrong: [
+        "Informal refunds do not replace having proper systems and responsiveness.",
+        "—",
+        "The SRA can regulate conduct and systems even where LeO handles consumer redress.",
+        "Workload is not an excuse for non-compliance."
+      ]
+    }
+  },
+  {
+    topic: "Code — supervision (individual duty to seek help)",
+    q: "You are a trainee handling a complex matter alone. You realise you are out of depth but stay silent to look competent. What is the best analysis?",
+    choices: [
+      "Acceptable: juniors are expected to learn by doing",
+      "Potential breach: you should seek supervision/assistance to ensure competent service and avoid harm",
+      "Acceptable if no complaint is made",
+      "Acceptable if the client is paying a reduced fee"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "A proper standard of service/competence often requires seeking supervision where needed; silence can lead to preventable errors and breaches.",
+      whyWrong: [
+        "Learning is expected, but not at the cost of competence and client protection.",
+        "—",
+        "Absence of complaint does not equal compliance.",
+        "Reduced fees do not justify incompetent work."
+      ]
+    }
+  },
+  {
+    topic: "Code — conflicts (informed consent limits)",
+    q: "You identify a conflict and both clients say they 'consent'. What is the most accurate next step?",
+    choices: [
+      "Proceed automatically because consent cures all conflicts",
+      "Check whether the Codes permit acting despite the conflict (limited exceptions) and whether safeguards/conditions are met",
+      "Proceed if the matter is low value",
+      "Proceed if you disclose the conflict only to the paying client"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Consent is not enough by itself. You must check whether a permitted exception exists and whether conditions/safeguards are satisfied.",
+      whyWrong: [
+        "Conflicts are not always consentable.",
+        "—",
+        "Value does not determine whether you may act.",
+        "Both affected clients must be treated properly; selective disclosure is improper."
+      ]
+    }
+  },
+  {
+    topic: "Code — acting fairly (third parties)",
+    q: "You threaten criminal proceedings to gain civil leverage when you have no proper basis to do so. Which is the best Code analysis?",
+    choices: [
+      "Acceptable negotiation tactic",
+      "Potential breach: improper pressure/unfair conduct undermining trust and fairness",
+      "Acceptable if it speeds up settlement",
+      "Acceptable if your client instructs it"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Improper threats and unfair pressure can breach the Codes’ emphasis on trust, fairness, and proper professional conduct.",
+      whyWrong: [
+        "Negotiation does not justify improper intimidation tactics.",
+        "—",
+        "Speed/settlement does not make it acceptable.",
+        "Client instructions do not justify misconduct."
+      ]
+    }
+  },
+  {
+    topic: "Code — confidentiality vs 'helping' a friend",
+    q: "A friend asks you if their ex is your client and how the case is going. You disclose small details 'off the record'. What is the best analysis?",
+    choices: [
+      "Permissible if you do not disclose documents",
+      "Likely breach: confidentiality covers client affairs and informal disclosures can still breach the Code",
+      "Permissible because it is outside work hours",
+      "Permissible if your friend promises secrecy"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Confidentiality applies to client affairs; informal 'small' disclosures can still be breaches, regardless of time or setting.",
+      whyWrong: [
+        "Confidentiality is not limited to documents.",
+        "—",
+        "Out-of-hours conduct can still be regulated.",
+        "A promise of secrecy does not create client consent or legal permission."
+      ]
+    }
+  },
+  {
+    topic: "Firm Code — outsourcing and contractors",
+    q: "A firm outsources work to a contractor but provides no oversight; errors and breaches occur. What is the best firm-level issue?",
+    choices: [
+      "No issue: contractors are solely responsible",
+      "Likely breach: firms must ensure those they employ/contract with do not cause or substantially contribute to breaches and are properly supervised",
+      "No issue if the contract contains an indemnity clause",
+      "No issue if clients are unaware of outsourcing"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "The firm Code focuses on systems/controls and responsibility for those it employs or contracts with, including supervision and compliance.",
+      whyWrong: [
+        "Firms retain regulatory responsibility for systems and oversight.",
+        "—",
+        "Indemnities do not replace regulatory compliance.",
+        "Non-disclosure does not cure lack of controls."
+      ]
+    }
+  },
+  {
+    topic: "Code — honesty in communications",
+    q: "You tell an opponent you have authority to settle when you do not, to pressure them. What is the best analysis?",
+    choices: [
+      "Acceptable because it is common in negotiation",
+      "Likely breach: misleading statements in professional communications engage honesty/integrity concerns",
+      "Acceptable if you later obtain authority",
+      "Acceptable if the opponent is aggressive"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Misrepresenting authority is misleading and risks breaching honesty/integrity expectations under the Codes.",
+      whyWrong: [
+        "Common practice is not a defence to regulatory breach.",
+        "—",
+        "Later authority does not justify earlier misleading conduct.",
+        "Opponent behaviour does not justify dishonesty."
+      ]
+    }
+  },
+  {
+    topic: "Code — conflicts (gift/benefit risks)",
+    q: "A client offers you an expensive watch after you win their case. You accept without recording it or informing the firm. What is the best regulatory concern?",
+    choices: [
+      "No concern: gifts are personal",
+      "Potential concern: integrity, conflicts of interest, and firm controls/recording expectations may be engaged",
+      "No concern if the client is wealthy",
+      "No concern if the case is finished"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "High-value gifts can raise integrity and conflict/independence concerns and may require firm-level controls and transparency.",
+      whyWrong: [
+        "Gifts can create conflicts and regulatory risk.",
+        "—",
+        "Client wealth is irrelevant.",
+        "End of case does not remove risk of improper influence or perception."
+      ]
+    }
+  },
+  {
+    topic: "Code — file and information handling",
+    q: "You leave a client file on a train. Which is the best Code-based issue to spot first?",
+    choices: [
+      "Only a data protection issue",
+      "Confidentiality and protection of client information (and potentially firm systems/training)",
+      "No issue unless the media reports it",
+      "No issue if you inform your supervisor verbally"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Loss of a client file is fundamentally a confidentiality/protection issue, and may also indicate firm-level training/system failings.",
+      whyWrong: [
+        "Data protection may also arise, but confidentiality is a central regulatory duty.",
+        "—",
+        "Media coverage is not the trigger for compliance.",
+        "Verbal notification alone does not address the underlying duties."
+      ]
+    }
+  },
+  {
+    topic: "Firm Code — culture and compliance",
+    q: "A firm rewards fee earners solely for billing, ignoring repeated ethical complaints about sharp practice. What is the best firm-level analysis?",
+    choices: [
+      "No issue: business incentives are not regulated",
+      "Potential breach: firm systems/culture can undermine compliance; governance and controls must support ethical service delivery",
+      "No issue if profits rise",
+      "Only an HR issue"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Firm-level obligations include governance, systems and controls that support compliance; a culture incentivising sharp practice can drive breaches.",
+      whyWrong: [
+        "The SRA regulates firm systems and controls that impact ethical delivery of legal services.",
+        "—",
+        "Profitability does not excuse compliance failures.",
+        "It may be HR-related, but it is also a regulatory risk."
+      ]
+    }
+  },
+  {
+    topic: "Code — conflicts (own interest)",
+    q: "You act on a matter where your sibling owns shares in a counterparty, and you do not disclose it. What is the best analysis?",
+    choices: [
+      "No conflict because you are not the shareholder",
+      "Potential own-interest conflict/significant risk; you must assess and manage under the Code (and likely disclose/avoid acting)",
+      "No issue if your sibling promises not to trade shares",
+      "No issue if the matter is small"
+    ],
+    correct: 1,
+    explain: {
+      whyRight:
+        "Connections creating an own-interest conflict or significant risk must be identified and dealt with under conflicts rules—often requiring non-involvement or robust safeguards where permitted.",
+      whyWrong: [
+        "Indirect interests can still create conflicts/significant risks.",
+        "—",
+        "A promise not to trade does not remove the conflict risk.",
+        "Value is not the test for conflicts compliance."
+      ]
+    }
+  },
+  {
+    topic: "Code — misleading by omission",
+    q: "You answer a direct question with a technically true response designed to conceal a material fact. What is the best analysis?",
     choices: [
       "Acceptable because the statement is technically true",
-      "Acceptable because you did not say it was filed",
-      "Potential breach: you must not mislead clients by acts or omissions",
-      "Acceptable if filing will happen later today"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code prohibits misleading clients (and others), including through omissions or allowing misleading impressions.",
-      whyWrong: [
-        "Technical truth is not enough if you intend to mislead.",
-        "Omissions that mislead are still prohibited.",
-        "—",
-        "Future intention does not justify misleading now."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 1: Maintaining trust and acting fairly (colleagues/bullying)",
-    q: "A manager witnesses a colleague repeatedly bullying a trainee in meetings. Under the Code, which is most accurate?",
-    choices: [
-      "It is a private HR matter and not a conduct issue",
-      "The manager must challenge behaviour that does not treat colleagues fairly and with respect",
-      "Bullying is only relevant if it affects a client matter",
-      "It is acceptable if the trainee’s work improves"
+      "Potential breach: misleading conduct can engage honesty/integrity even without literal falsity",
+      "Acceptable if the other side could have asked better questions",
+      "Acceptable if your client benefits"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "The Code requires fair and respectful treatment of colleagues and, for managers, a duty to challenge behaviour that falls below this standard.",
+        "Professional standards focus on trust and fairness; misleading by omission/half-truth can breach honesty/integrity expectations.",
       whyWrong: [
-        "Professional conduct obligations can apply to workplace behaviour.",
+        "Technical truth does not guarantee compliance if the intent/effect is misleading.",
         "—",
-        "The obligation is not limited to client impact.",
-        "Improvement does not justify bullying."
+        "Opponents’ questioning does not excuse misleading conduct.",
+        "Client benefit is not a justification."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (tampering with evidence)",
-    q: "During litigation, your client suggests removing a damaging paragraph from a document before disclosure. Which is most accurate under the Code?",
+    topic: "Firm Code — client money/assets (high level)",
+    q: "A firm mixes client money with office money to help cashflow. Which is the best regulatory analysis at a high level?",
     choices: [
-      "Acceptable if the paragraph is embarrassing rather than legally relevant",
-      "Acceptable if you do not personally edit the document",
-      "Prohibited: you must not misuse or tamper with evidence or attempt to do so",
-      "Acceptable if you later disclose the original version"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "In dispute resolution, the Code expressly prohibits misusing or tampering with evidence or attempting to do so.",
-      whyWrong: [
-        "Embarrassment is not a justification for tampering.",
-        "You cannot avoid responsibility by having someone else do it.",
-        "—",
-        "Later disclosure does not cure deliberate tampering."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (influencing witnesses)",
-    q: "You tell a witness, 'If you soften your evidence, the case will be easier for everyone.' Which is most accurate under the Code?",
-    choices: [
-      "Permitted as long as you do not tell them to lie",
-      "Permitted if the witness is your client",
-      "Prohibited: you must not seek to influence the substance of evidence",
-      "Permitted if the other side is doing the same"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code prohibits seeking to influence the substance of evidence, including persuading witnesses to change their evidence.",
-      whyWrong: [
-        "Influencing substance can breach the Code even without explicit instructions to lie.",
-        "Whether the witness is your client does not permit improper influence.",
-        "—",
-        "Another party’s misconduct does not justify yours."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (benefits to witnesses)",
-    q: "You offer a witness a bonus if your client wins and the witness’s evidence is 'helpful'. Which is most accurate under the Code?",
-    choices: [
-      "Permitted if disclosed to the court",
-      "Permitted if the witness is an expert",
-      "Prohibited: you must not offer benefits to witnesses dependent on evidence or outcome",
-      "Permitted if paid by the client not the solicitor"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code prohibits providing or offering any benefit to witnesses dependent upon the nature of their evidence or the outcome of the case.",
-      whyWrong: [
-        "Disclosure does not make it acceptable.",
-        "Experts are still witnesses; outcome-dependent benefits are prohibited.",
-        "—",
-        "Who pays does not change the prohibition."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (properly arguable assertions)",
-    q: "You plan to allege fraud in pleadings with no evidence, hoping disclosure will 'turn something up'. Under the Code, which is most accurate?",
-    choices: [
-      "Acceptable if your client insists",
-      "Acceptable if you phrase it as 'it is suspected'",
-      "Not acceptable: you should only put forward statements that are properly arguable",
-      "Acceptable if it is tactically useful"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires that assertions/submissions to the court or others must be properly arguable.",
-      whyWrong: [
-        "Client pressure does not justify improper allegations.",
-        "Labeling something as a suspicion does not cure lack of a proper arguable basis.",
-        "—",
-        "Tactical benefit is not a justification."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (court orders/contempt)",
-    q: "You miss a court-ordered deadline to serve evidence because you were busy on another matter. Under the Code, which is most accurate?",
-    choices: [
-      "It is acceptable if the delay is short",
-      "It is acceptable if the client did not complain",
-      "Potential breach: you must comply with court orders and not place yourself in contempt",
-      "It is acceptable if you later apologise to the opponent"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires compliance with court orders placing obligations on you and avoiding conduct that places you in contempt of court.",
-      whyWrong: [
-        "Short delay can still breach duties depending on circumstances.",
-        "Client silence does not remove court obligations.",
-        "—",
-        "Apologising may mitigate but does not make non-compliance acceptable."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (wasting court time)",
-    q: "You file repetitive applications with little prospect of success purely to pressure the opponent into settlement. Under the Code, which is most accurate?",
-    choices: [
-      "Acceptable as robust litigation strategy",
-      "Acceptable if the client is funding the litigation",
-      "Potential breach: you must not waste the court’s time",
-      "Acceptable if the opponent is unrepresented"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code specifically states you must not waste the court’s time; tactical abuse of applications can breach this.",
-      whyWrong: [
-        "Robustness is not a licence to abuse process.",
-        "Funding does not justify wasting court resources.",
-        "—",
-        "Opponent vulnerability increases risk of unfair advantage, not justification."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 2: Dispute resolution (duty to draw attention to relevant law/irregularities)",
-    q: "You become aware of a binding statutory provision that undermines your client’s case, and the opponent has overlooked it. Under the Code, which is most accurate?",
-    choices: [
-      "You should keep quiet because it harms your client",
-      "You must draw the court’s attention to relevant cases/statutes or procedural irregularities likely to have a material effect",
-      "You only need to mention it if the judge asks",
-      "You can ignore it if the opponent is represented"
+      "Permissible if the firm repays it within 30 days",
+      "Serious risk: firm-level duties on client money/assets controls are engaged, and this can amount to major regulatory breach",
+      "Permissible if the client is wealthy",
+      "Permissible if recorded in an internal spreadsheet"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "The Code requires drawing the court’s attention to relevant cases/statutory provisions or procedural irregularities you are aware of that are likely to have a material effect.",
+        "Handling client money requires strict controls; using it as 'float' is a classic serious compliance breach (and triggers accounts rules issues too).",
       whyWrong: [
-        "You cannot withhold material legal authorities from the court on that basis.",
+        "Time-limited repayment does not make misuse acceptable.",
         "—",
-        "The obligation is not limited to answering direct questions.",
-        "Representation status does not remove the duty."
+        "Client wealth is irrelevant.",
+        "Internal recording does not legalise misuse."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 3: Service and competence (client instructions)",
-    q: "A relative gives you instructions on behalf of an elderly client, but you suspect the client does not agree. Under the Code, what should you do?",
+    topic: "Code — reporting and accountability (scenario)",
+    q: "You discover a colleague has been fabricating client signatures. Your manager tells you to 'keep quiet' to avoid scandal. What is the best starting point?",
     choices: [
-      "Proceed because the relative is paying",
-      "Proceed but note your concerns on file",
-      "Do not act unless you have satisfied yourself the instructions represent the client’s wishes",
-      "Act only if the relative signs an indemnity"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "You should act only on instructions from the client (or someone properly authorised). If you suspect instructions do not represent the client’s wishes, you must not act unless satisfied they do.",
-      whyWrong: [
-        "Payment does not establish authority or client wishes.",
-        "A file note is not sufficient if you still suspect instructions are not the client’s wishes.",
-        "—",
-        "An indemnity does not cure lack of proper instructions."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 3: Service and competence (competent and timely service)",
-    q: "You take on a matter outside your expertise and miss a critical deadline because you didn’t know the procedure. Under the Code, which is most accurate?",
-    choices: [
-      "It is acceptable if you tried your best",
-      "It is acceptable if the client accepted the risk",
-      "Potential breach: you must ensure service is competent and delivered in a timely manner",
-      "It is acceptable if you refund your fees"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires competent service delivered in a timely manner; lack of competence that causes delay/missed deadlines can breach this duty.",
-      whyWrong: [
-        "Good intentions do not replace competence requirements.",
-        "Client agreement does not remove your regulatory obligation to provide competent service.",
-        "—",
-        "Refunding fees may address loss but does not undo the breach."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 3: Service and competence (maintaining competence)",
-    q: "Which statement best reflects your obligation to keep skills up to date?",
-    choices: [
-      "Only trainees must maintain up-to-date skills",
-      "You must maintain your competence and keep professional knowledge and skills up to date",
-      "Competence is assumed once qualified and does not require ongoing steps",
-      "Only litigation lawyers must keep up to date"
+      "Do nothing unless the client complains",
+      "You must take the issue seriously and act appropriately in line with regulatory duties, including escalating within the firm and considering reporting obligations",
+      "Join in so you are not singled out",
+      "Only the COLP can act; you have no role"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "The Code requires you to maintain competence to carry out your role and keep professional knowledge and skills up to date.",
+        "Serious misconduct engages regulatory accountability. You should escalate appropriately and consider relevant duties to report/rectify, rather than conceal.",
       whyWrong: [
-        "The obligation applies to all regulated individuals, not just trainees.",
-        "Competence is an ongoing requirement.",
+        "Waiting for a complaint is not appropriate where serious misconduct is known.",
         "—",
-        "It applies across all practice areas."
+        "Participating compounds the misconduct.",
+        "COLP has responsibilities, but individuals also have duties to act appropriately."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 3: Service and competence (client needs/circumstances)",
-    q: "A client has limited English and appears confused about the advice. Under the Code, which is most accurate?",
+    topic: "Code — professional boundaries with clients",
+    q: "A client asks you to 'just sign' a statement for them because they trust you and it saves time. You know they have not read it. What is the best analysis?",
     choices: [
-      "You can proceed as long as the engagement letter was sent",
-      "You must consider and take account of the client’s attributes, needs and circumstances",
-      "You should only communicate in legal terminology to avoid ambiguity",
-      "You can rely on the client’s friend to interpret without checking"
+      "Acceptable if the statement is probably accurate",
+      "Potential breach: fairness and integrity concerns; you must not facilitate improper process or take unfair advantage",
+      "Acceptable if the client is experienced",
+      "Acceptable if you keep a copy on file"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "The Code requires you to consider and take account of your client’s attributes, needs and circumstances.",
+        "Facilitating a client signing unread documents can exploit vulnerability and risks improper conduct; your duty is to act fairly and with integrity.",
       whyWrong: [
-        "An engagement letter alone is not enough if the client cannot properly understand.",
+        "Probability of accuracy does not justify improper process.",
         "—",
-        "Overly technical language may worsen understanding; the duty is to adapt appropriately.",
-        "You must ensure communication is effective and appropriate; unverified informal interpretation can be risky."
+        "Experience does not remove the duty to ensure fair/proper practice.",
+        "Record-keeping does not cure the underlying issue."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 3: Service and competence (supervision/accountability)",
-    q: "A paralegal drafts advice that you sign off without reading, and it contains serious errors. Under the Code, which is most accurate?",
+    topic: "Firm Code — training and supervision",
+    q: "A firm hires many paralegals, gives them targets, but provides no compliance training and minimal supervision. Errors and complaints spike. What is the best firm-level issue?",
     choices: [
-      "You are not responsible because the paralegal drafted it",
-      "You remain accountable and must effectively supervise work being done for clients",
-      "Supervision is optional if the paralegal is experienced",
-      "Responsibility lies solely with the firm’s COLP"
+      "No issue because paralegals are not solicitors",
+      "Likely breach: the firm must maintain effective systems/controls and supervision to ensure compliant, competent service delivery",
+      "No issue if clients sign engagement letters",
+      "Only a commercial problem"
     ],
     correct: 1,
     explain: {
       whyRight:
-        "Where you supervise or manage others providing legal services, you remain accountable for work carried out through them and must effectively supervise work for clients.",
+        "Firms must ensure their delivery model is properly supervised and controlled to comply with regulatory arrangements and provide competent services.",
       whyWrong: [
-        "Delegation does not remove accountability.",
+        "Firm duties extend to how services are delivered, including by non-solicitors under supervision.",
         "—",
-        "Experience does not make supervision optional; it depends on risk and role.",
-        "COLP oversight does not remove your personal responsibility."
+        "Engagement letters do not substitute for supervision and training.",
+        "It is commercial, but also a regulatory compliance issue."
       ]
     }
   },
   {
-    topic: "SRA Code of Conduct — 4: Client money and assets (financial benefit)",
-    q: "A third party offers you a commission for placing a client’s funds into a particular product, and you keep it without telling the client. Under the Code, which is most accurate?",
+    topic: "Code — quick identification question",
+    q: "Which issue is MOST likely to be analysed under both the individual Code and the firm Code in an SQE ethics scenario?",
     choices: [
-      "Acceptable if the commission is small",
-      "Acceptable if it does not affect your advice",
-      "Potential breach: you must properly account to clients for any financial benefit received as a result of their instructions",
-      "Acceptable if your firm policy allows it"
+      "A solicitor’s favourite football team",
+      "A single typo in an internal draft",
+      "Repeated deadline-missing caused by poor supervision and weak systems",
+      "A client choosing to change solicitors mid-matter"
     ],
     correct: 2,
     explain: {
       whyRight:
-        "The Code requires you to properly account to clients for any financial benefit you receive as a result of their instructions (unless they have agreed otherwise).",
+        "Repeated failures often indicate both individual competence issues and firm-level governance/supervision/control failings—SQE commonly tests both layers.",
       whyWrong: [
-        "Size does not remove the duty to account.",
-        "Independence of advice does not remove the duty to account.",
+        "That is unrelated.",
+        "A single typo rarely engages both Codes meaningfully.",
         "—",
-        "Firm policy cannot override the Code."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 4: Client money and assets (safeguarding)",
-    q: "You leave signed transfer forms and title deeds unattended on an open desk overnight. Under the Code, which is most accurate?",
-    choices: [
-      "No issue if the office is locked",
-      "No issue if you trust your colleagues",
-      "Potential breach: you must safeguard money and assets entrusted to you by clients and others",
-      "Only client money is protected, not documents"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires safeguarding money and assets entrusted by clients and others; this includes protecting client assets (including documents) from loss or misuse.",
-      whyWrong: [
-        "Security measures matter, but leaving assets exposed can still be a safeguarding failure.",
-        "Trust is not a control.",
-        "—",
-        "The duty is to safeguard money and assets, not money alone."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 4: Client money and assets (personal holding of client money)",
-    q: "A client asks to transfer settlement money into your personal bank account 'just for one day' to help them. Under the Code, which is most accurate?",
-    choices: [
-      "Permitted if the client consents in writing",
-      "Permitted if you keep a clear record",
-      "Not permitted except in limited circumstances allowed by the regulations; generally you must not personally hold client money",
-      "Permitted if it helps the client avoid bank charges"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code says you do not personally hold client money save as permitted under the relevant regulatory exception; client consent alone is not a general permission.",
-      whyWrong: [
-        "Client consent does not create a general exception.",
-        "Record-keeping does not make it permissible.",
-        "—",
-        "Practical benefit does not override the rule."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 5: Referrals/introducers (disclosure of interests)",
-    q: "You refer a client to a financial adviser you partly own but say nothing about your interest. Under the Code, which is most accurate?",
-    choices: [
-      "Acceptable if the adviser is reputable",
-      "Acceptable if the client benefits",
-      "Potential breach: clients must be informed of any financial or other interest in the referral",
-      "Acceptable if the interest is less than 10%"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "For referrals/introducers/fee sharing, the Code requires informing clients of any financial or other interest you/your business has in referring them.",
-      whyWrong: [
-        "Reputation does not remove the disclosure duty.",
-        "Client benefit does not remove the disclosure duty.",
-        "—",
-        "No percentage threshold is stated in the Code for disclosure."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 5: Referrals/introducers (fee sharing in writing)",
-    q: "Your firm has an informal handshake arrangement to share fees with an introducer, and you do not put it in writing. Under the Code, which is most accurate?",
-    choices: [
-      "Acceptable if both parties remember the terms",
-      "Acceptable if the client is told about the arrangement",
-      "Not compliant: the fee sharing agreement must be in writing",
-      "Acceptable if the introducer is not regulated"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires that the fee sharing agreement is in writing.",
-      whyWrong: [
-        "Memory is not a substitute for a written agreement.",
-        "Client information is required, but the Code also requires the agreement to be in writing.",
-        "—",
-        "Regulatory status of the introducer does not remove the writing requirement."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 5: Referrals (criminal proceedings prohibition)",
-    q: "An introducer offers you a payment for each client they send who is facing criminal proceedings. Under the Code, which is most accurate?",
-    choices: [
-      "Permitted if fully disclosed to the client",
-      "Permitted if the client signs a waiver",
-      "Prohibited: you must not receive or make payments relating to referrals for clients who are the subject of criminal proceedings",
-      "Permitted if paid after the case ends"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code states you do not receive payments relating to a referral or make payments to an introducer in respect of clients who are the subject of criminal proceedings.",
-      whyWrong: [
-        "Disclosure does not override the prohibition.",
-        "A waiver does not override the prohibition.",
-        "—",
-        "Timing does not avoid the rule if it relates to the referral."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 5: Separate businesses (informed consent)",
-    q: "You want to split a client’s matter between your firm and a separate, unregulated business you own. Under the Code, which is most accurate?",
-    choices: [
-      "Permitted without telling the client if it reduces cost",
-      "Permitted if you supervise the separate business",
-      "Permitted only where the client has given informed consent",
-      "Never permitted in any circumstances"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code allows referral/recommendation/introduction to a separate business (or division of the matter) only where the client has given informed consent.",
-      whyWrong: [
-        "Cost reduction does not remove the informed consent requirement.",
-        "Supervision does not remove the informed consent requirement.",
-        "—",
-        "It is not an absolute ban; it is conditional on informed consent."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 5: Other business requirements (use of 'solicitors' name)",
-    q: "You become a director of an unregulated company called 'High Street Solicitors Ltd'. Under the Code, which is most accurate?",
-    choices: [
-      "Permitted if you are not providing reserved legal activities there",
-      "Permitted if the company website has a disclaimer",
-      "Not permitted unless the business is an authorised body",
-      "Permitted if the company only does consultancy"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code restricts being a manager/employee/member/interest holder of a business whose name includes 'solicitors' or suggests it is a solicitors’ firm, unless it is an authorised body.",
-      whyWrong: [
-        "The restriction focuses on the business identity/name, not only reserved activity.",
-        "A disclaimer does not necessarily cure the prohibited setup.",
-        "—",
-        "Consultancy still may suggest regulation; the rule is about the name/suggestion unless authorised."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 6: Conflicts (own interest conflict)",
-    q: "You are asked to advise a client on whether to sue a company you own shares in. Under the Code, which is most accurate?",
-    choices: [
-      "You can act if you disclose your shareholding and the client agrees",
-      "You can act if your shares are held through a fund",
-      "You must not act if there is an own interest conflict or a significant risk of one",
-      "You can act if you charge a reduced fee"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code states you do not act if there is an own interest conflict or a significant risk of such a conflict.",
-      whyWrong: [
-        "Disclosure/consent does not automatically permit acting where an own interest conflict exists under the Code’s wording.",
-        "Indirect holding may still create an own interest conflict depending on facts.",
-        "—",
-        "Discounts do not remove conflicts."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 6: Conflicts (acting for multiple clients)",
-    q: "You act for two clients in the same matter whose interests conflict. Under the Code, when can you still act?",
-    choices: [
-      "Never: acting for both is always prohibited",
-      "Only if both clients are wealthy and sophisticated",
-      "Only if they have a substantially common interest or are competing for the same objective AND all give informed written consent AND safeguards are used where appropriate AND it is reasonable to act",
-      "Only if your firm has a conflict waiver clause in its standard terms"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code allows acting despite a conflict only in limited situations (substantially common interest or competing for same objective) and only if informed written consent is obtained, safeguards are applied where appropriate, and it is reasonable to act.",
-      whyWrong: [
-        "It is not an absolute prohibition; there are limited exceptions.",
-        "Sophistication does not replace the Code’s conditions.",
-        "—",
-        "Standard terms cannot replace genuine informed consent and reasonableness."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 6: Confidentiality (basic rule)",
-    q: "A journalist calls asking whether you act for a high-profile client. The client has not consented. Under the Code, which is most accurate?",
-    choices: [
-      "You can confirm you act, but not give details",
-      "You can confirm if it helps your marketing",
-      "You must keep the affairs of current and former clients confidential unless disclosure is required or permitted by law or the client consents",
-      "You can confirm if the information is widely suspected"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires confidentiality of current and former clients’ affairs unless disclosure is required/permitted by law or the client consents.",
-      whyWrong: [
-        "Even confirming you act can be a breach if it is confidential.",
-        "Marketing does not justify disclosure.",
-        "—",
-        "Speculation does not equal permission to disclose."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 6: Disclosure to client (material information)",
-    q: "You learn a fact that is material to your client’s transaction, but telling them would make them pull out and you would lose fees. Under the Code, which is most accurate?",
-    choices: [
-      "You can keep it quiet to protect your fees",
-      "You should tell them only if asked directly",
-      "You must make the client aware of all information material to the matter, unless a listed exception applies",
-      "You can keep it quiet if it benefits the client"
-    ],
-    correct: 2,
-    explain: {
-      whyRight:
-        "The Code requires you to make the client aware of all information material to the matter, unless an exception applies (eg legal prohibition, informed consent in writing to non-disclosure, serious injury risk, or privileged mistakenly disclosed document).",
-      whyWrong: [
-        "Your fees are irrelevant and create an own-interest issue.",
-        "The duty is proactive; not limited to direct questions.",
-        "—",
-        "You cannot decide unilaterally to withhold material information outside the exceptions."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 6: Privileged mistakenly disclosed document",
-    q: "The opponent mistakenly emails you a privileged memo that is material to your client’s case. Under the Code’s disclosure-to-client rule, which is most accurate?",
-    choices: [
-      "You must always show it to your client because it is material",
-      "You may be prevented from disclosing it to your client because it is privileged and you only know of it due to mistaken disclosure",
-      "You can use it freely as long as you do not quote it",
-      "You should post it to the court to be transparent"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code’s rule on telling clients material information has an exception where the information is in a privileged document known to you only because it was mistakenly disclosed.",
-      whyWrong: [
-        "Materiality alone does not override the privileged mistaken-disclosure exception.",
-        "—",
-        "Using privileged material can raise serious issues beyond the Code’s disclosure rule.",
-        "You should not disseminate privileged material in that way."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 7: Cooperation and accountability (SRA requests)",
-    q: "The SRA asks you for documents and explanations about a complaint. Under the Code, which is most accurate?",
-    choices: [
-      "You can ignore it until you receive a formal notice",
-      "You should respond promptly and provide full and accurate explanations, information and documents",
-      "You can provide partial information to protect your reputation",
-      "You only have to cooperate if your firm is being investigated, not you personally"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires prompt response to the SRA and providing full and accurate explanations, information and documents requested.",
-      whyWrong: [
-        "The duty is to respond promptly; delaying without justification is risky.",
-        "You must be full and accurate, not selective.",
-        "—",
-        "Individuals are personally accountable and must cooperate."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 7: Reporting serious breaches",
-    q: "You discover credible facts suggesting another solicitor has committed a serious breach of regulatory arrangements. Under the Code, which is most accurate?",
-    choices: [
-      "You should wait until a client complains",
-      "You should report promptly to the SRA (or another approved regulator as appropriate) if you reasonably believe it is capable of amounting to a serious breach",
-      "You should only report if you have absolute proof",
-      "You should report only if your COLP tells you to"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires prompt reporting where you reasonably believe facts/matters are capable of amounting to a serious breach (and also requires informing the SRA of matters that should be brought to its attention).",
-      whyWrong: [
-        "Reporting is not dependent on a client complaint.",
-        "You do not need absolute proof; it is a reasonable belief threshold.",
-        "—",
-        "You may report via COLP/COFA where appropriate, but the obligation is not conditional on their permission."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 7: Things going wrong (openness with clients)",
-    q: "You make an error that causes the client financial loss. Under the Code, which is most accurate?",
-    choices: [
-      "You should avoid telling the client until you know if they notice",
-      "You must be honest and open with the client; put matters right if possible and explain what happened and the likely impact",
-      "You should only disclose if the client asks",
-      "You can disclose only after your insurer approves"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires honesty and openness with clients if things go wrong, and (if loss/harm occurs) to put matters right if possible and explain fully and promptly what happened and likely impact.",
-      whyWrong: [
-        "Concealment conflicts with the duty of openness.",
-        "—",
-        "The duty is proactive and prompt.",
-        "Insurance issues may need managing, but do not justify withholding required client information."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 8: Complaints handling (time of engagement)",
-    q: "At the start of a retainer, what information must clients be given in writing under the Code’s complaints handling rules?",
-    choices: [
-      "Only the firm’s hourly rate",
-      "Their right to complain, how and to whom to complain, and any right to complain to the Legal Ombudsman and when",
-      "Only the solicitor’s qualifications",
-      "Only the client’s right to sue for negligence"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires clients to be informed in writing at the time of engagement about their right to complain, how/whom to complain to, and any right to complain to the Legal Ombudsman and when.",
-      whyWrong: [
-        "Rates are separate pricing information; complaints info is specifically required.",
-        "—",
-        "Qualifications do not replace complaints information.",
-        "The Code focuses on complaints procedure and Legal Ombudsman rights, not civil claims explanations."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 8: Complaints handling (8-week rule and ADR info)",
-    q: "A client complains. After 8 weeks, the complaint is not resolved to the client’s satisfaction. Under the Code, which is most accurate?",
-    choices: [
-      "You can close the file without further communication",
-      "You must inform the client in writing about their right to go to the Legal Ombudsman and provide contact details; and if your procedure is exhausted, give ADR body details and say whether you agree to use it",
-      "You only need to respond if the client threatens court",
-      "You can charge the client an admin fee for the complaints process"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires written information after 8 weeks if unresolved (Legal Ombudsman route, time frames and contact details), and—if procedure exhausted—ADR body details and whether you agree to use it.",
-      whyWrong: [
-        "The Code requires specific written information.",
-        "—",
-        "Client threats are not the trigger; the 8-week unresolved position is.",
-        "Complaints must be dealt with free of charge."
-      ]
-    }
-  },
-  {
-    topic: "SRA Code of Conduct — 8: Client information and publicity (pricing/costs)",
-    q: "Which statement best reflects your obligation about costs information under the Code?",
-    choices: [
-      "You only need to give a cost estimate at the end of the matter",
-      "You must give the best possible information about pricing and, at engagement and when appropriate as the matter progresses, the likely overall cost and any costs incurred",
-      "You can refuse to discuss costs until the client signs",
-      "You should give a single fixed quote even if it is unrealistic"
-    ],
-    correct: 1,
-    explain: {
-      whyRight:
-        "The Code requires the best possible pricing information and updates at engagement and when appropriate as the matter progresses about likely overall cost and costs incurred.",
-      whyWrong: [
-        "Costs info is required early and updated when appropriate, not just at the end.",
-        "—",
-        "Refusing to discuss costs conflicts with informed decision-making.",
-        "Unrealistic quotes risk being misleading."
+        "Changing solicitors is generally a client choice, not automatically a regulatory breach."
       ]
     }
   }
