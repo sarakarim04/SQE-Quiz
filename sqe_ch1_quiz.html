@@ -471,6 +471,10 @@ const quizBooks = [
       {
         label: "Chapter 11: Trusts in Wills",
         file: "WillsAndEstates/Chapter11.js"
+      },
+      {
+        label: "Final 45: Mixed Review",
+        file: "WillsAndEstates/Final45.js"
       }
     ]
   },
@@ -851,8 +855,15 @@ function showFeedback() {
     : "Not quite — review the explanation and try again on restart/shuffle.";
 
   // Explanation content: include why right + why others wrong (excluding the correct one for 'why wrong')
+  const explain = item.explain && typeof item.explain === "object" ? item.explain : null;
+  if (!explain || !explain.whyRight) {
+    explainBox.innerHTML = "<p class=\"muted\">Explanation coming soon for this question.</p>";
+    return;
+  }
+
+  const whyWrong = Array.isArray(explain.whyWrong) ? explain.whyWrong : [];
   const explainHtml = [];
-  explainHtml.push(`<p><strong>Why this is right:</strong> ${escapeHtml(item.explain.whyRight)}</p>`);
+  explainHtml.push(`<p><strong>Why this is right:</strong> ${escapeHtml(explain.whyRight)}</p>`);
 
   // Build why-other-options-wrong list in DISPLAY order for clarity
   const displayIndices = state.orderMap[state.idx];
@@ -860,7 +871,7 @@ function showFeedback() {
   displayIndices.forEach((origIndex, displayIndex) => {
     if (origIndex === item.correct) return;
     const text = item.choices[origIndex];
-    const reason = item.explain.whyWrong[origIndex] || "Not the best statement on these facts.";
+    const reason = whyWrong[origIndex] || "Not the best statement on these facts.";
     wrongLines.push(`<p><strong>${letters(displayIndex)}.</strong> ${escapeHtml(text)}<br><span class="muted">${escapeHtml(reason)}</span></p>`);
   });
 
