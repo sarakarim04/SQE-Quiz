@@ -277,8 +277,10 @@
       <div class="title">
         <h1 id="quizTitle">SQE1 Criminal Law — Chapter 1 Quiz</h1>
         <p id="quizSubtitle">General principles (AR/MR, omissions, causation, coincidence, strict liability, burden/standard). Click an option to get instant feedback.</p>
+        <p id="bookLabel" class="muted">Book: Criminal Law</p>
       </div>
       <div class="controls">
+        <select id="bookSelect" class="quiz-select" aria-label="Choose a book"></select>
         <select id="quizSelect" class="quiz-select" aria-label="Choose a chapter quiz"></select>
         <button id="shuffleBtn" class="secondary" title="Shuffle questions and options">Shuffle</button>
         <button id="restartBtn" title="Restart the quiz">Restart</button>
@@ -336,42 +338,47 @@
  * Loads question sets from chapter JSON files.
  */
 
-const quizSources = [
+const quizBooks = [
   {
-    label: "Chapter 1: General Principles",
-    file: "General Principals of Criminal Law.json"
-  },
-  {
-    label: "Chapter 2: Parties to a Crime",
-    file: "PartiesToACrime.js"
-  },
-  {
-    label: "Chapter 3: Inchoate Offences",
-    file: "incohate offences.js"
-  },
-  {
-    label: "Chapter 4: General Defences",
-    file: "Chapter4.js"
-  },
-  {
-    label: "Chapter 5: Homicide Offences",
-    file: "Chapter5.js"
-  },
-  {
-    label: "Chapter 6: Non-fatal Offences",
-    file: "Chapter6.js"
-  },
-  {
-    label: "Chapter 7: Theft Offences",
-    file: "Chapter7.js"
-  },
-  {
-    label: "Chapter 8: Fraud Offences",
-    file: "Chapter8.js"
-  },
-  {
-    label: "Chapter 9: Criminal Damages",
-    file: "Chapter9.js"
+    label: "Criminal Law",
+    chapters: [
+      {
+        label: "Chapter 1: General Principles",
+        file: "CriminalLaw/General Principals of Criminal Law.json"
+      },
+      {
+        label: "Chapter 2: Parties to a Crime",
+        file: "CriminalLaw/PartiesToACrime.js"
+      },
+      {
+        label: "Chapter 3: Inchoate Offences",
+        file: "CriminalLaw/incohate offences.js"
+      },
+      {
+        label: "Chapter 4: General Defences",
+        file: "CriminalLaw/Chapter4.js"
+      },
+      {
+        label: "Chapter 5: Homicide Offences",
+        file: "CriminalLaw/Chapter5.js"
+      },
+      {
+        label: "Chapter 6: Non-fatal Offences",
+        file: "CriminalLaw/Chapter6.js"
+      },
+      {
+        label: "Chapter 7: Theft Offences",
+        file: "CriminalLaw/Chapter7.js"
+      },
+      {
+        label: "Chapter 8: Fraud Offences",
+        file: "CriminalLaw/Chapter8.js"
+      },
+      {
+        label: "Chapter 9: Criminal Damages",
+        file: "CriminalLaw/Chapter9.js"
+      }
+    ]
   }
 ];
 
@@ -414,11 +421,15 @@ const finalScore = el("finalScore");
 const finalMsg = el("finalMsg");
 const reviewBtn = el("reviewBtn");
 const restartBtn2 = el("restartBtn2");
+const bookSelect = el("bookSelect");
 const quizSelect = el("quizSelect");
+const bookLabel = el("bookLabel");
 const quizTitle = el("quizTitle");
 const quizSubtitle = el("quizSubtitle");
 
-let currentQuizFile = quizSources[0] ? quizSources[0].file : "";
+let currentBookIndex = 0;
+let currentQuizFile =
+  quizBooks[0] && quizBooks[0].chapters[0] ? quizBooks[0].chapters[0].file : "";
 
 function deepCopy(obj) {
   return JSON.parse(JSON.stringify(obj));
@@ -457,6 +468,12 @@ function applyQuizMeta(data) {
   quizTitle.textContent = title;
   quizSubtitle.textContent = subtitle;
   document.title = title;
+}
+
+function applyBookMeta(book) {
+  if (!bookLabel) return;
+  const label = book ? book.label : "";
+  bookLabel.textContent = label ? `Book: ${label}` : "";
 }
 
 function loadScript(file) {
@@ -511,12 +528,25 @@ async function loadQuiz(file, { shuffleQuestions = false } = {}) {
   }
 }
 
-function populateQuizSelect() {
-  quizSelect.innerHTML = "";
-  quizSources.forEach((source) => {
+function populateBookSelect() {
+  bookSelect.innerHTML = "";
+  quizBooks.forEach((book, index) => {
     const option = document.createElement("option");
-    option.value = source.file;
-    option.textContent = source.label;
+    option.value = String(index);
+    option.textContent = book.label;
+    bookSelect.appendChild(option);
+  });
+  bookSelect.value = String(currentBookIndex);
+}
+
+function populateChapterSelect(bookIndex) {
+  const book = quizBooks[bookIndex];
+  quizSelect.innerHTML = "";
+  if (!book) return;
+  book.chapters.forEach((chapter) => {
+    const option = document.createElement("option");
+    option.value = chapter.file;
+    option.textContent = chapter.label;
     quizSelect.appendChild(option);
   });
   if (currentQuizFile) quizSelect.value = currentQuizFile;
@@ -713,8 +743,17 @@ reviewBtn.addEventListener("click", () => {
   state.idx = 0;
   render();
 });
+bookSelect.addEventListener("change", (e) => {
+  currentBookIndex = Number(e.target.value);
+  const book = quizBooks[currentBookIndex];
+  currentQuizFile = book && book.chapters[0] ? book.chapters[0].file : "";
+  populateChapterSelect(currentBookIndex);
+  applyBookMeta(book);
+  loadQuiz(currentQuizFile, { shuffleQuestions: false });
+});
 quizSelect.addEventListener("change", (e) => {
-  loadQuiz(e.target.value, { shuffleQuestions: false });
+  currentQuizFile = e.target.value;
+  loadQuiz(currentQuizFile, { shuffleQuestions: false });
 });
 
 // Keyboard shortcuts
@@ -725,7 +764,9 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Init
-populateQuizSelect();
+populateBookSelect();
+populateChapterSelect(currentBookIndex);
+applyBookMeta(quizBooks[currentBookIndex]);
 loadQuiz(currentQuizFile, { shuffleQuestions: false });
 </script>
 </body>
