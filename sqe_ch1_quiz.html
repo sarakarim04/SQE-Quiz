@@ -1,1042 +1,1172 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SQE1 Criminal Law — Chapter Quiz</title>
-  <style>
-    :root {
-      --bg: #0b0f19;
-      --card: #121a2a;
-      --muted: #8fa3bf;
-      --text: #eaf0ff;
-      --border: rgba(255,255,255,.10);
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --good: #32d583;
-      --bad: #ff6b6b;
-      --warn: #ffd166;
-      --accent: #7aa2ff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.18), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(50,213,131,.14), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 22px;
-    }
-    .wrap { width: min(980px, 100%); }
-    header {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .title h1 {
-      font-size: 20px;
-      margin: 0 0 6px 0;
-      letter-spacing: .2px;
-    }
-    .title p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-    .controls {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    button {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      padding: 10px 12px;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0,0,0,.18);
-      transition: transform .08s ease, background .15s ease, border-color .15s ease;
-      font-weight: 600;
-      font-size: 13px;
-    }
-    button:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
-    button:active { transform: translateY(0px); }
-    button.secondary { background: transparent; }
-    button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
-    .quiz-select {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      padding: 10px 12px;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0,0,0,.18);
-      font-weight: 600;
-      font-size: 13px;
-    }
-    .quiz-select:focus {
-      outline: 2px solid rgba(122,162,255,.5);
-      outline-offset: 2px;
-    }
-    .quiz-select option {
-      color: #0b0f19;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SQE1 Criminal Law — Chapter Quiz</title>
+    <style>
+      :root {
+        --bg: #0b0f19;
+        --card: #121a2a;
+        --muted: #8fa3bf;
+        --text: #eaf0ff;
+        --border: rgba(255, 255, 255, 0.1);
+        --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --good: #32d583;
+        --bad: #ff6b6b;
+        --warn: #ffd166;
+        --accent: #7aa2ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(
+            1200px 600px at 20% 0%,
+            rgba(122, 162, 255, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 90% 10%,
+            rgba(50, 213, 131, 0.14),
+            transparent 55%
+          ),
+          var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+      }
+      .wrap {
+        width: min(980px, 100%);
+      }
+      header {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .title h1 {
+        font-size: 20px;
+        margin: 0 0 6px 0;
+        letter-spacing: 0.2px;
+      }
+      .title p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      button {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        padding: 10px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        transition:
+          transform 0.08s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      button:active {
+        transform: translateY(0px);
+      }
+      button.secondary {
+        background: transparent;
+      }
+      button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .quiz-select {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        padding: 10px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .quiz-select:focus {
+        outline: 2px solid rgba(122, 162, 255, 0.5);
+        outline-offset: 2px;
+      }
+      .quiz-select option {
+        color: #0b0f19;
+      }
 
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .topbar {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .pill strong { color: var(--text); font-weight: 800; }
-    .progress {
-      flex: 1;
-      height: 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      overflow: hidden;
-      min-width: 140px;
-      max-width: 420px;
-    }
-    .progress > div {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, rgba(122,162,255,.85), rgba(50,213,131,.85));
-    }
-    .content { padding: 16px; }
-    .q-meta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .tag {
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px dashed rgba(255,255,255,.18);
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.02);
-    }
-    .question {
-      font-size: 16px;
-      line-height: 1.45;
-      margin: 10px 0 14px 0;
-    }
-    .options {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .opt {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      border-radius: 14px;
-      padding: 12px;
-      cursor: pointer;
-      transition: transform .06s ease, border-color .15s ease, background .15s ease;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .opt:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
-    .opt:active { transform: translateY(0px); }
-    .opt[aria-disabled="true"] { cursor: default; opacity: 1; }
-    .letter {
-      width: 26px;
-      height: 26px;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      font-weight: 800;
-      color: var(--muted);
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
-    .opt .txt { color: var(--text); line-height: 1.35; }
-    .opt.correct {
-      border-color: rgba(50,213,131,.7);
-      background: rgba(50,213,131,.12);
-    }
-    .opt.wrong {
-      border-color: rgba(255,107,107,.7);
-      background: rgba(255,107,107,.12);
-    }
-    .feedback {
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      display: none;
-    }
-    .feedback.show { display: block; }
-    .feedback .headline {
-      font-weight: 900;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .badge {
-      font-size: 12px;
-      font-weight: 900;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-    }
-    .badge.good { border-color: rgba(50,213,131,.7); color: var(--good); }
-    .badge.bad { border-color: rgba(255,107,107,.7); color: var(--bad); }
-    details {
-      margin-top: 8px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding-top: 10px;
-    }
-    summary {
-      cursor: pointer;
-      color: var(--accent);
-      font-weight: 800;
-      user-select: none;
-    }
-    .explain {
-      margin-top: 10px;
-      color: var(--text);
-      line-height: 1.45;
-      font-size: 13px;
-    }
-    .explain p { margin: 8px 0; }
-    .nav {
-      display: flex;
-      gap: 10px;
-      justify-content: space-between;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-    .muted { color: var(--muted); }
-    .end {
-      display: none;
-      padding: 18px;
-      text-align: center;
-    }
-    .end.show { display: block; }
-    .end h2 { margin: 0 0 10px 0; font-size: 18px; }
-    .end p { margin: 0 0 14px 0; color: var(--muted); }
-    .scorebig {
-      font-size: 44px;
-      font-weight: 1000;
-      letter-spacing: -1px;
-      margin: 8px 0 14px 0;
-    }
-    .smallnote { font-size: 12px; color: var(--muted); margin-top: 10px; }
-  </style>
-</head>
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .topbar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .pill strong {
+        color: var(--text);
+        font-weight: 800;
+      }
+      .progress {
+        flex: 1;
+        height: 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        overflow: hidden;
+        min-width: 140px;
+        max-width: 420px;
+      }
+      .progress > div {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(
+          90deg,
+          rgba(122, 162, 255, 0.85),
+          rgba(50, 213, 131, 0.85)
+        );
+      }
+      .content {
+        padding: 16px;
+      }
+      .q-meta {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .tag {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px dashed rgba(255, 255, 255, 0.18);
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .question {
+        font-size: 16px;
+        line-height: 1.45;
+        margin: 10px 0 14px 0;
+      }
+      .options {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .opt {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 14px;
+        padding: 12px;
+        cursor: pointer;
+        transition:
+          transform 0.06s ease,
+          border-color 0.15s ease,
+          background 0.15s ease;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .opt:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .opt:active {
+        transform: translateY(0px);
+      }
+      .opt[aria-disabled="true"] {
+        cursor: default;
+        opacity: 1;
+      }
+      .letter {
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        font-weight: 800;
+        color: var(--muted);
+        flex: 0 0 auto;
+        margin-top: 1px;
+      }
+      .opt .txt {
+        color: var(--text);
+        line-height: 1.35;
+      }
+      .opt.correct {
+        border-color: rgba(50, 213, 131, 0.7);
+        background: rgba(50, 213, 131, 0.12);
+      }
+      .opt.wrong {
+        border-color: rgba(255, 107, 107, 0.7);
+        background: rgba(255, 107, 107, 0.12);
+      }
+      .feedback {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        display: none;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .feedback .headline {
+        font-weight: 900;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .badge {
+        font-size: 12px;
+        font-weight: 900;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .badge.good {
+        border-color: rgba(50, 213, 131, 0.7);
+        color: var(--good);
+      }
+      .badge.bad {
+        border-color: rgba(255, 107, 107, 0.7);
+        color: var(--bad);
+      }
+      details {
+        margin-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 10px;
+      }
+      summary {
+        cursor: pointer;
+        color: var(--accent);
+        font-weight: 800;
+        user-select: none;
+      }
+      .explain {
+        margin-top: 10px;
+        color: var(--text);
+        line-height: 1.45;
+        font-size: 13px;
+      }
+      .explain p {
+        margin: 8px 0;
+      }
+      .nav {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .end {
+        display: none;
+        padding: 18px;
+        text-align: center;
+      }
+      .end.show {
+        display: block;
+      }
+      .end h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      .end p {
+        margin: 0 0 14px 0;
+        color: var(--muted);
+      }
+      .scorebig {
+        font-size: 44px;
+        font-weight: 1000;
+        letter-spacing: -1px;
+        margin: 8px 0 14px 0;
+      }
+      .smallnote {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="wrap">
-    <header>
-      <div class="title">
-        <h1 id="quizTitle">SQE1 Criminal Law — Chapter 1 Quiz</h1>
-        <p id="quizSubtitle">General principles (AR/MR, omissions, causation, coincidence, strict liability, burden/standard). Click an option to get instant feedback.</p>
-        <p id="bookLabel" class="muted">Book: Criminal Law</p>
-      </div>
-      <div class="controls">
-        <select id="bookSelect" class="quiz-select" aria-label="Choose a book"></select>
-        <select id="quizSelect" class="quiz-select" aria-label="Choose a chapter quiz"></select>
-        <button id="shuffleBtn" class="secondary" title="Shuffle questions and options">Shuffle</button>
-        <button id="restartBtn" title="Restart the quiz">Restart</button>
-      </div>
-    </header>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="title">
+          <h1 id="quizTitle">SQE1 Criminal Law — Chapter 1 Quiz</h1>
+          <p id="quizSubtitle">
+            General principles (AR/MR, omissions, causation, coincidence, strict
+            liability, burden/standard). Click an option to get instant
+            feedback.
+          </p>
+          <p id="bookLabel" class="muted">Book: Criminal Law</p>
+        </div>
+        <div class="controls">
+          <select
+            id="bookSelect"
+            class="quiz-select"
+            aria-label="Choose a book"
+          ></select>
+          <select
+            id="quizSelect"
+            class="quiz-select"
+            aria-label="Choose a chapter quiz"
+          ></select>
+          <button
+            id="shuffleBtn"
+            class="secondary"
+            title="Shuffle questions and options"
+          >
+            Shuffle
+          </button>
+          <button id="restartBtn" title="Restart the quiz">Restart</button>
+        </div>
+      </header>
 
-    <div class="card" id="quizCard">
-      <div class="topbar">
-        <div class="pill"><strong id="qNum">1</strong>/<span id="qTotal">30</span></div>
-        <div class="progress" aria-label="Progress"><div id="progFill"></div></div>
-        <div class="pill">Score: <strong id="score">0</strong></div>
-      </div>
-
-      <div class="content" id="quizView">
-        <div class="q-meta">
-          <span class="tag" id="topicTag">Topic</span>
+      <div class="card" id="quizCard">
+        <div class="topbar">
+          <div class="pill">
+            <strong id="qNum">1</strong>/<span id="qTotal">30</span>
+          </div>
+          <div class="progress" aria-label="Progress">
+            <div id="progFill"></div>
+          </div>
+          <div class="pill">Score: <strong id="score">0</strong></div>
         </div>
 
-        <div class="question" id="questionText">Question text</div>
-
-        <div class="options" id="options"></div>
-
-        <div class="feedback" id="feedbackBox">
-          <div class="headline">
-            <span id="fbBadge" class="badge">—</span>
-            <span id="fbText">—</span>
+        <div class="content" id="quizView">
+          <div class="q-meta">
+            <span class="tag" id="topicTag">Topic</span>
           </div>
 
-          <details id="explainDetails">
-            <summary>Show explanation</summary>
-            <div class="explain" id="explainBox"></div>
-          </details>
+          <div class="question" id="questionText">Question text</div>
 
-          <div class="nav">
-            <button id="prevBtn" class="secondary">← Previous</button>
-            <button id="nextBtn">Next →</button>
+          <div class="options" id="options"></div>
+
+          <div class="feedback" id="feedbackBox">
+            <div class="headline">
+              <span id="fbBadge" class="badge">—</span>
+              <span id="fbText">—</span>
+            </div>
+
+            <details id="explainDetails">
+              <summary>Show explanation</summary>
+              <div class="explain" id="explainBox"></div>
+            </details>
+
+            <div class="nav">
+              <button id="prevBtn" class="secondary">← Previous</button>
+              <button id="nextBtn">Next →</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="end" id="endView">
-        <h2>Finished 🎉</h2>
-        <div class="scorebig" id="finalScore">0/30</div>
-        <p id="finalMsg">—</p>
-        <button id="reviewBtn" class="secondary">Review answers</button>
-        <button id="restartBtn2">Restart</button>
-        <div class="smallnote">Tip: hit “Shuffle” for a fresh run.</div>
+        <div class="end" id="endView">
+          <h2>Finished 🎉</h2>
+          <div class="scorebig" id="finalScore">0/30</div>
+          <p id="finalMsg">—</p>
+          <button id="reviewBtn" class="secondary">Review answers</button>
+          <button id="restartBtn2">Restart</button>
+          <div class="smallnote">Tip: hit “Shuffle” for a fresh run.</div>
+        </div>
       </div>
     </div>
-  </div>
 
-<script>
-/**
- * SQE1 Criminal Law — Chapter Quiz Loader
- * Loads question sets from chapter JSON files.
- */
+    <script>
+      /**
+       * SQE1 Criminal Law — Chapter Quiz Loader
+       * Loads question sets from chapter JSON files.
+       */
 
-const quizBooks = [
-  {
-    label: "Criminal Law",
-    chapters: [
-      {
-        label: "Chapter 1: General Principles",
-        file: "CriminalLaw/General Principals of Criminal Law.json"
-      },
-      {
-        label: "Chapter 2: Parties to a Crime",
-        file: "CriminalLaw/PartiesToACrime.js"
-      },
-      {
-        label: "Chapter 3: Inchoate Offences",
-        file: "CriminalLaw/incohate offences.js"
-      },
-      {
-        label: "Chapter 4: General Defences",
-        file: "CriminalLaw/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Homicide Offences",
-        file: "CriminalLaw/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Non-fatal Offences",
-        file: "CriminalLaw/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Theft Offences",
-        file: "CriminalLaw/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Fraud Offences",
-        file: "CriminalLaw/Chapter8.js"
-      },
-      {
-        label: "Chapter 9: Criminal Damages",
-        file: "CriminalLaw/Chapter9.js"
-      },
-      {
-        label: "Final 45: Mixed Review",
-        file: "CriminalLaw/Final45.js"
+      const quizBooks = [
+        {
+          label: "Criminal Law",
+          chapters: [
+            {
+              label: "Chapter 1: General Principles",
+              file: "CriminalLaw/General Principals of Criminal Law.json",
+            },
+            {
+              label: "Chapter 2: Parties to a Crime",
+              file: "CriminalLaw/PartiesToACrime.js",
+            },
+            {
+              label: "Chapter 3: Inchoate Offences",
+              file: "CriminalLaw/incohate offences.js",
+            },
+            {
+              label: "Chapter 4: General Defences",
+              file: "CriminalLaw/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Homicide Offences",
+              file: "CriminalLaw/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Non-fatal Offences",
+              file: "CriminalLaw/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Theft Offences",
+              file: "CriminalLaw/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Fraud Offences",
+              file: "CriminalLaw/Chapter8.js",
+            },
+            {
+              label: "Chapter 9: Criminal Damages",
+              file: "CriminalLaw/Chapter9.js",
+            },
+            {
+              label: "Final 45: Mixed Review",
+              file: "CriminalLaw/Final45.js",
+            },
+          ],
+        },
+        {
+          label: "Criminal Practice",
+          chapters: [
+            {
+              label: "Chapter 1: Advising Clients",
+              file: "CriminalPractice/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Bail and Pre-trial",
+              file: "CriminalPractice/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: First Hearing and Venue",
+              file: "CriminalPractice/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Plea Before Venue",
+              file: "CriminalPractice/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Case Management",
+              file: "CriminalPractice/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Evidence and Admissibility",
+              file: "CriminalPractice/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Trial Process",
+              file: "CriminalPractice/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Sentencing",
+              file: "CriminalPractice/Chapter8.js",
+            },
+            {
+              label: "Chapter 9: Appeals",
+              file: "CriminalPractice/Chapter9.js",
+            },
+            {
+              label: "Chapter 10: Youth Court",
+              file: "CriminalPractice/Chapter10.js",
+            },
+            {
+              label: "Final 45: Mixed Review",
+              file: "CriminalPractice/Final45.js",
+            },
+          ],
+        },
+        {
+          label: "Wills and Estates",
+          chapters: [
+            {
+              label: "Chapter 1: Validity of Wills",
+              file: "WillsAndEstates/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Personal Representatives",
+              file: "WillsAndEstates/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: Construction of Wills",
+              file: "WillsAndEstates/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Revocation and Alteration",
+              file: "WillsAndEstates/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Intestacy",
+              file: "WillsAndEstates/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Assets Outside the Estate",
+              file: "WillsAndEstates/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Grants of Representation",
+              file: "WillsAndEstates/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Estate Administration",
+              file: "WillsAndEstates/Chapter8.js",
+            },
+            {
+              label: "Chapter 9: Inheritance Act Claims",
+              file: "WillsAndEstates/Chapter9.js",
+            },
+            {
+              label: "Chapter 10: Inheritance Tax",
+              file: "WillsAndEstates/Chapter10.js",
+            },
+            {
+              label: "Chapter 11: Trusts in Wills",
+              file: "WillsAndEstates/Chapter11.js",
+            },
+            {
+              label: "Final 45: Mixed Review",
+              file: "WillsAndEstates/Final45.js",
+            },
+          ],
+        },
+        {
+          label: "Ethics",
+          chapters: [
+            {
+              label: "Chapter 1: SRA Principles",
+              file: "Ethics/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Code of Conduct",
+              file: "Ethics/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: Conduct in Disputes",
+              file: "Ethics/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Conflicts and Authority",
+              file: "Ethics/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Criminal Practice Ethics",
+              file: "Ethics/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Wills and Capacity Ethics",
+              file: "Ethics/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Property Ethics",
+              file: "Ethics/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Solicitors Accounts",
+              file: "Ethics/Chapter8.js",
+            },
+            {
+              label: "Final 45: Mixed Review",
+              file: "Ethics/Final45.js",
+            },
+          ],
+        },
+        {
+          label: "Trust Law",
+          chapters: [
+            {
+              label: "Chapter 1: Three Certainties",
+              file: "TrustLaw/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Formalities",
+              file: "TrustLaw/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: Construction and Powers",
+              file: "TrustLaw/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Constitution",
+              file: "TrustLaw/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Beneficial Interests",
+              file: "TrustLaw/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Purpose and Charitable Trusts",
+              file: "TrustLaw/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Resulting Trusts",
+              file: "TrustLaw/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Family Home Trusts",
+              file: "TrustLaw/Chapter8.js",
+            },
+            {
+              label: "Chapter 9: Breach and Liability",
+              file: "TrustLaw/Chapter9.js",
+            },
+            {
+              label: "Chapter 10: Trustees’ Duties",
+              file: "TrustLaw/Chapter10.js",
+            },
+            {
+              label: "Chapter 11: Trustee Liability",
+              file: "TrustLaw/Chapter11.js",
+            },
+            {
+              label: "Chapter 12: Tracing and Claims",
+              file: "TrustLaw/Chapter12.js",
+            },
+          ],
+        },
+        {
+          label: "Solicitors Accounts",
+          chapters: [
+            {
+              label: "Chapter 1: Core Principles",
+              file: "SolicitorsAccounts/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Client Money Rules",
+              file: "SolicitorsAccounts/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: Handling Client Money",
+              file: "SolicitorsAccounts/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Interest and Residual Balances",
+              file: "SolicitorsAccounts/Chapter4.js",
+            },
+          ],
+        },
+        {
+          label: "LandLaw",
+          chapters: [
+            {
+              label: "Chapter 1: The nature and principles of land law",
+              file: "LandLaw/Chapter1.js",
+            },
+            {
+              label: "Chapter 2: Unregistered land",
+              file: "LandLaw/Chapter2.js",
+            },
+            {
+              label: "Chapter 3: Registered land",
+              file: "LandLaw/Chapter3.js",
+            },
+            {
+              label: "Chapter 4: Freehold estates",
+              file: "LandLaw/Chapter4.js",
+            },
+            {
+              label: "Chapter 5: Leasehold estates",
+              file: "LandLaw/Chapter5.js",
+            },
+            {
+              label: "Chapter 6: Easements",
+              file: "LandLaw/Chapter6.js",
+            },
+            {
+              label: "Chapter 7: Freehold covenants",
+              file: "LandLaw/Chapter7.js",
+            },
+            {
+              label: "Chapter 8: Mortgages",
+              file: "LandLaw/Chapter8.js",
+            },
+            {
+              label: "Chapter 9: Co-ownership",
+              file: "LandLaw/Chapter9.js",
+            },
+          ],
+        },
+      ];
+
+      const scriptCache = new Map();
+      const quizDataCache = new Map();
+      const cacheBust = Date.now();
+      let loadSeq = 0;
+
+      // -------- quiz engine --------
+      let questions = [];
+      let state = {
+        idx: 0,
+        score: 0,
+        answered: [],
+        picked: [],
+        orderMap: [], // per question: mapping from displayed option index -> original option index
+      };
+
+      const el = (id) => document.getElementById(id);
+
+      const qNum = el("qNum");
+      const qTotal = el("qTotal");
+      const scoreEl = el("score");
+      const progFill = el("progFill");
+      const topicTag = el("topicTag");
+      const questionText = el("questionText");
+      const optionsEl = el("options");
+      const feedbackBox = el("feedbackBox");
+      const fbBadge = el("fbBadge");
+      const fbText = el("fbText");
+      const explainBox = el("explainBox");
+      const explainDetails = el("explainDetails");
+      const prevBtn = el("prevBtn");
+      const nextBtn = el("nextBtn");
+      const shuffleBtn = el("shuffleBtn");
+      const restartBtn = el("restartBtn");
+      const quizView = el("quizView");
+      const endView = el("endView");
+      const finalScore = el("finalScore");
+      const finalMsg = el("finalMsg");
+      const reviewBtn = el("reviewBtn");
+      const restartBtn2 = el("restartBtn2");
+      const bookSelect = el("bookSelect");
+      const quizSelect = el("quizSelect");
+      const bookLabel = el("bookLabel");
+      const quizTitle = el("quizTitle");
+      const quizSubtitle = el("quizSubtitle");
+
+      let currentBookIndex = 0;
+      let currentQuizFile =
+        quizBooks[0] && quizBooks[0].chapters[0]
+          ? quizBooks[0].chapters[0].file
+          : "";
+
+      function deepCopy(obj) {
+        return JSON.parse(JSON.stringify(obj));
       }
-    ]
-  },
-  {
-    label: "Criminal Practice",
-    chapters: [
-      {
-        label: "Chapter 1: Advising Clients",
-        file: "CriminalPractice/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Bail and Pre-trial",
-        file: "CriminalPractice/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: First Hearing and Venue",
-        file: "CriminalPractice/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Plea Before Venue",
-        file: "CriminalPractice/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Case Management",
-        file: "CriminalPractice/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Evidence and Admissibility",
-        file: "CriminalPractice/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Trial Process",
-        file: "CriminalPractice/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Sentencing",
-        file: "CriminalPractice/Chapter8.js"
-      },
-      {
-        label: "Chapter 9: Appeals",
-        file: "CriminalPractice/Chapter9.js"
-      },
-      {
-        label: "Chapter 10: Youth Court",
-        file: "CriminalPractice/Chapter10.js"
-      },
-      {
-        label: "Final 45: Mixed Review",
-        file: "CriminalPractice/Final45.js"
-      }
-    ]
-  },
-  {
-    label: "Wills and Estates",
-    chapters: [
-      {
-        label: "Chapter 1: Validity of Wills",
-        file: "WillsAndEstates/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Personal Representatives",
-        file: "WillsAndEstates/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: Construction of Wills",
-        file: "WillsAndEstates/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Revocation and Alteration",
-        file: "WillsAndEstates/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Intestacy",
-        file: "WillsAndEstates/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Assets Outside the Estate",
-        file: "WillsAndEstates/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Grants of Representation",
-        file: "WillsAndEstates/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Estate Administration",
-        file: "WillsAndEstates/Chapter8.js"
-      },
-      {
-        label: "Chapter 9: Inheritance Act Claims",
-        file: "WillsAndEstates/Chapter9.js"
-      },
-      {
-        label: "Chapter 10: Inheritance Tax",
-        file: "WillsAndEstates/Chapter10.js"
-      },
-      {
-        label: "Chapter 11: Trusts in Wills",
-        file: "WillsAndEstates/Chapter11.js"
-      },
-      {
-        label: "Final 45: Mixed Review",
-        file: "WillsAndEstates/Final45.js"
-      }
-    ]
-  },
-  {
-    label: "Ethics",
-    chapters: [
-      {
-        label: "Chapter 1: SRA Principles",
-        file: "Ethics/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Code of Conduct",
-        file: "Ethics/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: Conduct in Disputes",
-        file: "Ethics/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Conflicts and Authority",
-        file: "Ethics/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Criminal Practice Ethics",
-        file: "Ethics/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Wills and Capacity Ethics",
-        file: "Ethics/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Property Ethics",
-        file: "Ethics/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Solicitors Accounts",
-        file: "Ethics/Chapter8.js"
-      },
-      {
-        label: "Final 45: Mixed Review",
-        file: "Ethics/Final45.js"
-      }
-    ]
-  },
-  {
-    label: "Trust Law",
-    chapters: [
-      {
-        label: "Chapter 1: Three Certainties",
-        file: "TrustLaw/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Formalities",
-        file: "TrustLaw/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: Construction and Powers",
-        file: "TrustLaw/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Constitution",
-        file: "TrustLaw/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Beneficial Interests",
-        file: "TrustLaw/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Purpose and Charitable Trusts",
-        file: "TrustLaw/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Resulting Trusts",
-        file: "TrustLaw/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Family Home Trusts",
-        file: "TrustLaw/Chapter8.js"
-      },
-      {
-        label: "Chapter 9: Breach and Liability",
-        file: "TrustLaw/Chapter9.js"
-      },
-      {
-        label: "Chapter 10: Trustees’ Duties",
-        file: "TrustLaw/Chapter10.js"
-      },
-      {
-        label: "Chapter 11: Trustee Liability",
-        file: "TrustLaw/Chapter11.js"
-      },
-      {
-        label: "Chapter 12: Tracing and Claims",
-        file: "TrustLaw/Chapter12.js"
-      }
-    ]
-  },
-  {
-    label: "Solicitors Accounts",
-    chapters: [
-      {
-        label: "Chapter 1: Core Principles",
-        file: "SolicitorsAccounts/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Client Money Rules",
-        file: "SolicitorsAccounts/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: Handling Client Money",
-        file: "SolicitorsAccounts/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Interest and Residual Balances",
-        file: "SolicitorsAccounts/Chapter4.js"
-      }
-    ]
-  },
-  {
-    label: "LandLaw",
-    chapters: [
-      {
-        label: "Chapter 1: The nature and principles of land law",
-        file: "LandLaw/Chapter1.js"
-      },
-      {
-        label: "Chapter 2: Unregistered land",
-        file: "LandLaw/Chapter2.js"
-      },
-      {
-        label: "Chapter 3: Registered land",
-        file: "LandLaw/Chapter3.js"
-      },
-      {
-        label: "Chapter 4: Freehold estates",
-        file: "LandLaw/Chapter4.js"
-      },
-      {
-        label: "Chapter 5: Leasehold estates",
-        file: "LandLaw/Chapter5.js"
-      },
-      {
-        label: "Chapter 6: Easements",
-        file: "LandLaw/Chapter6.js"
-      },
-      {
-        label: "Chapter 7: Freehold covenants",
-        file: "LandLaw/Chapter7.js"
-      },
-      {
-        label: "Chapter 8: Mortgages",
-        file: "LandLaw/Chapter8.js"
-      },
-      {
-        label: "Chapter 9: Co-ownership",
-        file: "LandLaw/Chapter9.js"
-      }
-    ]
-  }
-];
 
-const scriptCache = new Map();
-const quizDataCache = new Map();
-const cacheBust = Date.now();
-let loadSeq = 0;
-
-// -------- quiz engine --------
-let questions = [];
-let state = {
-  idx: 0,
-  score: 0,
-  answered: [],
-  picked: [],
-  orderMap: [] // per question: mapping from displayed option index -> original option index
-};
-
-const el = (id) => document.getElementById(id);
-
-const qNum = el("qNum");
-const qTotal = el("qTotal");
-const scoreEl = el("score");
-const progFill = el("progFill");
-const topicTag = el("topicTag");
-const questionText = el("questionText");
-const optionsEl = el("options");
-const feedbackBox = el("feedbackBox");
-const fbBadge = el("fbBadge");
-const fbText = el("fbText");
-const explainBox = el("explainBox");
-const explainDetails = el("explainDetails");
-const prevBtn = el("prevBtn");
-const nextBtn = el("nextBtn");
-const shuffleBtn = el("shuffleBtn");
-const restartBtn = el("restartBtn");
-const quizView = el("quizView");
-const endView = el("endView");
-const finalScore = el("finalScore");
-const finalMsg = el("finalMsg");
-const reviewBtn = el("reviewBtn");
-const restartBtn2 = el("restartBtn2");
-const bookSelect = el("bookSelect");
-const quizSelect = el("quizSelect");
-const bookLabel = el("bookLabel");
-const quizTitle = el("quizTitle");
-const quizSubtitle = el("quizSubtitle");
-
-let currentBookIndex = 0;
-let currentQuizFile =
-  quizBooks[0] && quizBooks[0].chapters[0] ? quizBooks[0].chapters[0].file : "";
-
-function deepCopy(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-function resetState(total) {
-  state.idx = 0;
-  state.score = 0;
-  state.answered = new Array(total).fill(false);
-  state.picked = new Array(total).fill(null);
-  state.orderMap = new Array(total).fill(null);
-  scoreEl.textContent = "0";
-}
-
-function buildQuestions(questionList, { shuffleQuestions = false } = {}) {
-  questions = deepCopy(questionList || []);
-  if (shuffleQuestions) shuffleArray(questions);
-
-  // Reset order maps because question order may change
-  resetState(questions.length);
-  qTotal.textContent = String(questions.length);
-  render();
-}
-
-function applyQuizMeta(data) {
-  const title = data.title || "SQE1 Criminal Law Quiz";
-  const subtitle = data.subtitle || "";
-  quizTitle.textContent = title;
-  quizSubtitle.textContent = subtitle;
-  document.title = title;
-}
-
-function applyBookMeta(book) {
-  if (!bookLabel) return;
-  const label = book ? book.label : "";
-  bookLabel.textContent = label ? `Book: ${label}` : "";
-}
-
-function loadScript(file) {
-  if (scriptCache.has(file)) return scriptCache.get(file);
-  const promise = new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = `${file}?v=${cacheBust}`;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("Quiz script load failed"));
-    document.head.appendChild(script);
-  });
-  scriptCache.set(file, promise);
-  return promise;
-}
-
-async function loadQuiz(file, { shuffleQuestions = false } = {}) {
-  const loadId = ++loadSeq;
-  if (!file) return;
-  try {
-    let data;
-    if (file.endsWith(".json")) {
-      const res = await fetch(`${file}?v=${cacheBust}`);
-      if (!res.ok) throw new Error("Quiz fetch failed");
-      data = await res.json();
-    } else if (file.endsWith(".js")) {
-      await loadScript(file);
-      if (window.quizData) {
-        quizDataCache.set(file, window.quizData);
-        delete window.quizData;
-      }
-      data = quizDataCache.get(file);
-      if (!data) throw new Error("Quiz data missing from script");
-    } else {
-      throw new Error("Unsupported quiz file");
-    }
-    if (loadId !== loadSeq) return;
-    const list = Array.isArray(data.questions) ? data.questions : [];
-    applyQuizMeta(data);
-    buildQuestions(list, { shuffleQuestions });
-    currentQuizFile = file;
-  } catch (err) {
-    if (loadId !== loadSeq) return;
-    resetState(0);
-    qTotal.textContent = "0";
-    quizView.style.display = "block";
-    endView.classList.remove("show");
-    topicTag.textContent = "Load error";
-    questionText.textContent = "Unable to load quiz data. Check the JSON file path.";
-    optionsEl.innerHTML = "";
-    feedbackBox.classList.remove("show");
-  }
-}
-
-function populateBookSelect() {
-  bookSelect.innerHTML = "";
-  quizBooks.forEach((book, index) => {
-    const option = document.createElement("option");
-    option.value = String(index);
-    option.textContent = book.label;
-    bookSelect.appendChild(option);
-  });
-  bookSelect.value = String(currentBookIndex);
-}
-
-function populateChapterSelect(bookIndex) {
-  const book = quizBooks[bookIndex];
-  quizSelect.innerHTML = "";
-  if (!book) return;
-  book.chapters.forEach((chapter) => {
-    const option = document.createElement("option");
-    option.value = chapter.file;
-    option.textContent = chapter.label;
-    quizSelect.appendChild(option);
-  });
-  if (currentQuizFile) quizSelect.value = currentQuizFile;
-}
-
-function setProgress() {
-  const total = questions.length;
-  const pct = total ? (state.idx / total) * 100 : 0;
-  progFill.style.width = `${pct}%`;
-  qNum.textContent = String(total ? state.idx + 1 : 0);
-  scoreEl.textContent = String(state.score);
-}
-
-function letters(i) {
-  return String.fromCharCode("A".charCodeAt(0) + i);
-}
-
-function render() {
-  setProgress();
-
-  // End view?
-  if (state.idx >= questions.length) {
-    quizView.style.display = "none";
-    endView.classList.add("show");
-    const total = questions.length;
-    finalScore.textContent = `${state.score}/${total}`;
-    const pct = total ? Math.round((state.score / total) * 100) : 0;
-    finalMsg.textContent =
-      pct >= 85 ? `Excellent. You're at ${pct}%. Move to the next chapter.` :
-      pct >= 70 ? `Solid. You're at ${pct}%. Review explanations and retry shuffled.` :
-      pct >= 50 ? `Getting there. You're at ${pct}%. Re-run and focus weak topics.` :
-                  `You're at ${pct}%. Re-study the summary, then re-run.`;
-    progFill.style.width = "100%";
-    return;
-  } else {
-    quizView.style.display = "block";
-    endView.classList.remove("show");
-  }
-
-  const item = questions[state.idx];
-
-  topicTag.textContent = item.topic;
-  questionText.textContent = item.q;
-
-  // Build display order for options if not already set
-  if (!state.orderMap[state.idx]) {
-    const indices = item.choices.map((_, i) => i);
-    shuffleArray(indices); // shuffle options each time question is first seen
-    state.orderMap[state.idx] = indices;
-  }
-
-  const displayIndices = state.orderMap[state.idx];
-  optionsEl.innerHTML = "";
-  feedbackBox.classList.toggle("show", state.answered[state.idx]);
-
-  // Reset explanation dropdown closed each render
-  explainDetails.open = false;
-
-  displayIndices.forEach((origIndex, displayIndex) => {
-    const opt = document.createElement("div");
-    opt.className = "opt";
-    opt.setAttribute("role", "button");
-    opt.tabIndex = 0;
-
-    const letter = document.createElement("div");
-    letter.className = "letter";
-    letter.textContent = letters(displayIndex);
-
-    const txt = document.createElement("div");
-    txt.className = "txt";
-    txt.textContent = item.choices[origIndex];
-
-    opt.appendChild(letter);
-    opt.appendChild(txt);
-
-    // If already answered, mark correct/wrong choices and disable clicking
-    if (state.answered[state.idx]) {
-      opt.setAttribute("aria-disabled", "true");
-      const chosenOrig = state.picked[state.idx];
-      const isCorrect = (origIndex === item.correct);
-      const isChosen = (origIndex === chosenOrig);
-
-      if (isCorrect) opt.classList.add("correct");
-      if (isChosen && !isCorrect) opt.classList.add("wrong");
-    } else {
-      opt.addEventListener("click", () => pick(displayIndex));
-      opt.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          pick(displayIndex);
+      function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
         }
+        return arr;
+      }
+
+      function resetState(total) {
+        state.idx = 0;
+        state.score = 0;
+        state.answered = new Array(total).fill(false);
+        state.picked = new Array(total).fill(null);
+        state.orderMap = new Array(total).fill(null);
+        scoreEl.textContent = "0";
+      }
+
+      function buildQuestions(questionList, { shuffleQuestions = false } = {}) {
+        questions = deepCopy(questionList || []);
+        if (shuffleQuestions) shuffleArray(questions);
+
+        // Reset order maps because question order may change
+        resetState(questions.length);
+        qTotal.textContent = String(questions.length);
+        render();
+      }
+
+      function applyQuizMeta(data) {
+        const title = data.title || "SQE1 Criminal Law Quiz";
+        const subtitle = data.subtitle || "";
+        quizTitle.textContent = title;
+        quizSubtitle.textContent = subtitle;
+        document.title = title;
+      }
+
+      function applyBookMeta(book) {
+        if (!bookLabel) return;
+        const label = book ? book.label : "";
+        bookLabel.textContent = label ? `Book: ${label}` : "";
+      }
+
+      function loadScript(file) {
+        if (scriptCache.has(file)) return scriptCache.get(file);
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = `${file}?v=${cacheBust}`;
+          script.async = true;
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error("Quiz script load failed"));
+          document.head.appendChild(script);
+        });
+        scriptCache.set(file, promise);
+        return promise;
+      }
+
+      async function loadQuiz(file, { shuffleQuestions = false } = {}) {
+        const loadId = ++loadSeq;
+        if (!file) return;
+        try {
+          let data;
+          if (file.endsWith(".json")) {
+            const res = await fetch(`${file}?v=${cacheBust}`);
+            if (!res.ok) throw new Error("Quiz fetch failed");
+            data = await res.json();
+          } else if (file.endsWith(".js")) {
+            await loadScript(file);
+            if (window.quizData) {
+              quizDataCache.set(file, window.quizData);
+              delete window.quizData;
+            }
+            data = quizDataCache.get(file);
+            if (!data) throw new Error("Quiz data missing from script");
+          } else {
+            throw new Error("Unsupported quiz file");
+          }
+          if (loadId !== loadSeq) return;
+          const list = Array.isArray(data.questions) ? data.questions : [];
+          applyQuizMeta(data);
+          buildQuestions(list, { shuffleQuestions });
+          currentQuizFile = file;
+        } catch (err) {
+          if (loadId !== loadSeq) return;
+          resetState(0);
+          qTotal.textContent = "0";
+          quizView.style.display = "block";
+          endView.classList.remove("show");
+          topicTag.textContent = "Load error";
+          questionText.textContent =
+            "Unable to load quiz data. Check the JSON file path.";
+          optionsEl.innerHTML = "";
+          feedbackBox.classList.remove("show");
+        }
+      }
+
+      function populateBookSelect() {
+        bookSelect.innerHTML = "";
+        quizBooks.forEach((book, index) => {
+          const option = document.createElement("option");
+          option.value = String(index);
+          option.textContent = book.label;
+          bookSelect.appendChild(option);
+        });
+        bookSelect.value = String(currentBookIndex);
+      }
+
+      function populateChapterSelect(bookIndex) {
+        const book = quizBooks[bookIndex];
+        quizSelect.innerHTML = "";
+        if (!book) return;
+        book.chapters.forEach((chapter) => {
+          const option = document.createElement("option");
+          option.value = chapter.file;
+          option.textContent = chapter.label;
+          quizSelect.appendChild(option);
+        });
+        if (currentQuizFile) quizSelect.value = currentQuizFile;
+      }
+
+      function setProgress() {
+        const total = questions.length;
+        const pct = total ? (state.idx / total) * 100 : 0;
+        progFill.style.width = `${pct}%`;
+        qNum.textContent = String(total ? state.idx + 1 : 0);
+        scoreEl.textContent = String(state.score);
+      }
+
+      function letters(i) {
+        return String.fromCharCode("A".charCodeAt(0) + i);
+      }
+
+      function render() {
+        setProgress();
+
+        // End view?
+        if (state.idx >= questions.length) {
+          quizView.style.display = "none";
+          endView.classList.add("show");
+          const total = questions.length;
+          finalScore.textContent = `${state.score}/${total}`;
+          const pct = total ? Math.round((state.score / total) * 100) : 0;
+          finalMsg.textContent =
+            pct >= 85
+              ? `Excellent. You're at ${pct}%. Move to the next chapter.`
+              : pct >= 70
+                ? `Solid. You're at ${pct}%. Review explanations and retry shuffled.`
+                : pct >= 50
+                  ? `Getting there. You're at ${pct}%. Re-run and focus weak topics.`
+                  : `You're at ${pct}%. Re-study the summary, then re-run.`;
+          progFill.style.width = "100%";
+          return;
+        } else {
+          quizView.style.display = "block";
+          endView.classList.remove("show");
+        }
+
+        const item = questions[state.idx];
+
+        topicTag.textContent = item.topic;
+        questionText.textContent = item.q;
+
+        // Build display order for options if not already set
+        if (!state.orderMap[state.idx]) {
+          const indices = item.choices.map((_, i) => i);
+          shuffleArray(indices); // shuffle options each time question is first seen
+          state.orderMap[state.idx] = indices;
+        }
+
+        const displayIndices = state.orderMap[state.idx];
+        optionsEl.innerHTML = "";
+        feedbackBox.classList.toggle("show", state.answered[state.idx]);
+
+        // Reset explanation dropdown closed each render
+        explainDetails.open = false;
+
+        displayIndices.forEach((origIndex, displayIndex) => {
+          const opt = document.createElement("div");
+          opt.className = "opt";
+          opt.setAttribute("role", "button");
+          opt.tabIndex = 0;
+
+          const letter = document.createElement("div");
+          letter.className = "letter";
+          letter.textContent = letters(displayIndex);
+
+          const txt = document.createElement("div");
+          txt.className = "txt";
+          txt.textContent = item.choices[origIndex];
+
+          opt.appendChild(letter);
+          opt.appendChild(txt);
+
+          // If already answered, mark correct/wrong choices and disable clicking
+          if (state.answered[state.idx]) {
+            opt.setAttribute("aria-disabled", "true");
+            const chosenOrig = state.picked[state.idx];
+            const isCorrect = origIndex === item.correct;
+            const isChosen = origIndex === chosenOrig;
+
+            if (isCorrect) opt.classList.add("correct");
+            if (isChosen && !isCorrect) opt.classList.add("wrong");
+          } else {
+            opt.addEventListener("click", () => pick(displayIndex));
+            opt.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                pick(displayIndex);
+              }
+            });
+          }
+
+          optionsEl.appendChild(opt);
+        });
+
+        // Nav buttons
+        prevBtn.disabled = state.idx === 0;
+        nextBtn.textContent =
+          state.idx === questions.length - 1 ? "Finish →" : "Next →";
+
+        if (state.answered[state.idx]) {
+          showFeedback();
+        }
+      }
+
+      function showFeedback() {
+        const item = questions[state.idx];
+        const chosenOrig = state.picked[state.idx];
+        const isCorrect = chosenOrig === item.correct;
+
+        feedbackBox.classList.add("show");
+
+        fbBadge.className = "badge " + (isCorrect ? "good" : "bad");
+        fbBadge.textContent = isCorrect ? "Correct" : "Incorrect";
+        fbText.textContent = isCorrect
+          ? "Nice — that’s the best answer."
+          : "Not quite — review the explanation and try again on restart/shuffle.";
+
+        // Explanation content: include why right + why others wrong (excluding the correct one for 'why wrong')
+        const explain =
+          item.explain && typeof item.explain === "object"
+            ? item.explain
+            : null;
+        if (!explain || !explain.whyRight) {
+          explainBox.innerHTML =
+            '<p class="muted">Explanation coming soon for this question.</p>';
+          return;
+        }
+
+        const whyWrong = Array.isArray(explain.whyWrong)
+          ? explain.whyWrong
+          : [];
+        const explainHtml = [];
+        explainHtml.push(
+          `<p><strong>Why this is right:</strong> ${escapeHtml(explain.whyRight)}</p>`,
+        );
+
+        // Build why-other-options-wrong list in DISPLAY order for clarity
+        const displayIndices = state.orderMap[state.idx];
+        const wrongLines = [];
+        displayIndices.forEach((origIndex, displayIndex) => {
+          if (origIndex === item.correct) return;
+          const text = item.choices[origIndex];
+          const reason =
+            whyWrong[origIndex] || "Not the best statement on these facts.";
+          wrongLines.push(
+            `<p><strong>${letters(displayIndex)}.</strong> ${escapeHtml(text)}<br><span class="muted">${escapeHtml(reason)}</span></p>`,
+          );
+        });
+
+        explainHtml.push(
+          `<p><strong>Why the other options are wrong:</strong></p>`,
+        );
+        explainHtml.push(wrongLines.join(""));
+
+        explainBox.innerHTML = explainHtml.join("");
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function pick(displayIndex) {
+        const item = questions[state.idx];
+        const origIndex = state.orderMap[state.idx][displayIndex];
+
+        if (state.answered[state.idx]) return;
+
+        state.answered[state.idx] = true;
+        state.picked[state.idx] = origIndex;
+
+        if (origIndex === item.correct) state.score += 1;
+
+        render();
+      }
+
+      function go(delta) {
+        const next = state.idx + delta;
+        if (next < 0) return;
+
+        // If going forward past last question, show end screen
+        if (next >= questions.length) {
+          state.idx = questions.length;
+          render();
+          return;
+        }
+
+        state.idx = next;
+        render();
+      }
+
+      // Events
+      prevBtn.addEventListener("click", () => go(-1));
+      nextBtn.addEventListener("click", () => go(+1));
+
+      shuffleBtn.addEventListener("click", () => {
+        loadQuiz(currentQuizFile, { shuffleQuestions: true });
       });
-    }
 
-    optionsEl.appendChild(opt);
-  });
+      restartBtn.addEventListener("click", () => {
+        loadQuiz(currentQuizFile, { shuffleQuestions: false });
+      });
+      restartBtn2.addEventListener("click", () => {
+        loadQuiz(currentQuizFile, { shuffleQuestions: false });
+      });
+      reviewBtn.addEventListener("click", () => {
+        // jump back to first question and allow review (answers remain recorded)
+        state.idx = 0;
+        render();
+      });
+      bookSelect.addEventListener("change", (e) => {
+        currentBookIndex = Number(e.target.value);
+        const book = quizBooks[currentBookIndex];
+        currentQuizFile = book && book.chapters[0] ? book.chapters[0].file : "";
+        populateChapterSelect(currentBookIndex);
+        applyBookMeta(book);
+        loadQuiz(currentQuizFile, { shuffleQuestions: false });
+      });
+      quizSelect.addEventListener("change", (e) => {
+        currentQuizFile = e.target.value;
+        loadQuiz(currentQuizFile, { shuffleQuestions: false });
+      });
 
-  // Nav buttons
-  prevBtn.disabled = (state.idx === 0);
-  nextBtn.textContent = state.idx === questions.length - 1 ? "Finish →" : "Next →";
+      // Keyboard shortcuts
+      document.addEventListener("keydown", (e) => {
+        if (e.target && ["INPUT", "TEXTAREA"].includes(e.target.tagName))
+          return;
+        if (e.key === "ArrowLeft") go(-1);
+        if (e.key === "ArrowRight") go(+1);
+      });
 
-  if (state.answered[state.idx]) {
-    showFeedback();
-  }
-}
-
-function showFeedback() {
-  const item = questions[state.idx];
-  const chosenOrig = state.picked[state.idx];
-  const isCorrect = (chosenOrig === item.correct);
-
-  feedbackBox.classList.add("show");
-
-  fbBadge.className = "badge " + (isCorrect ? "good" : "bad");
-  fbBadge.textContent = isCorrect ? "Correct" : "Incorrect";
-  fbText.textContent = isCorrect
-    ? "Nice — that’s the best answer."
-    : "Not quite — review the explanation and try again on restart/shuffle.";
-
-  // Explanation content: include why right + why others wrong (excluding the correct one for 'why wrong')
-  const explain = item.explain && typeof item.explain === "object" ? item.explain : null;
-  if (!explain || !explain.whyRight) {
-    explainBox.innerHTML = "<p class=\"muted\">Explanation coming soon for this question.</p>";
-    return;
-  }
-
-  const whyWrong = Array.isArray(explain.whyWrong) ? explain.whyWrong : [];
-  const explainHtml = [];
-  explainHtml.push(`<p><strong>Why this is right:</strong> ${escapeHtml(explain.whyRight)}</p>`);
-
-  // Build why-other-options-wrong list in DISPLAY order for clarity
-  const displayIndices = state.orderMap[state.idx];
-  const wrongLines = [];
-  displayIndices.forEach((origIndex, displayIndex) => {
-    if (origIndex === item.correct) return;
-    const text = item.choices[origIndex];
-    const reason = whyWrong[origIndex] || "Not the best statement on these facts.";
-    wrongLines.push(`<p><strong>${letters(displayIndex)}.</strong> ${escapeHtml(text)}<br><span class="muted">${escapeHtml(reason)}</span></p>`);
-  });
-
-  explainHtml.push(`<p><strong>Why the other options are wrong:</strong></p>`);
-  explainHtml.push(wrongLines.join(""));
-
-  explainBox.innerHTML = explainHtml.join("");
-}
-
-function escapeHtml(s) {
-  return String(s)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function pick(displayIndex) {
-  const item = questions[state.idx];
-  const origIndex = state.orderMap[state.idx][displayIndex];
-
-  if (state.answered[state.idx]) return;
-
-  state.answered[state.idx] = true;
-  state.picked[state.idx] = origIndex;
-
-  if (origIndex === item.correct) state.score += 1;
-
-  render();
-}
-
-function go(delta) {
-  const next = state.idx + delta;
-  if (next < 0) return;
-
-  // If going forward past last question, show end screen
-  if (next >= questions.length) {
-    state.idx = questions.length;
-    render();
-    return;
-  }
-
-  state.idx = next;
-  render();
-}
-
-// Events
-prevBtn.addEventListener("click", () => go(-1));
-nextBtn.addEventListener("click", () => go(+1));
-
-shuffleBtn.addEventListener("click", () => {
-  loadQuiz(currentQuizFile, { shuffleQuestions: true });
-});
-
-restartBtn.addEventListener("click", () => {
-  loadQuiz(currentQuizFile, { shuffleQuestions: false });
-});
-restartBtn2.addEventListener("click", () => {
-  loadQuiz(currentQuizFile, { shuffleQuestions: false });
-});
-reviewBtn.addEventListener("click", () => {
-  // jump back to first question and allow review (answers remain recorded)
-  state.idx = 0;
-  render();
-});
-bookSelect.addEventListener("change", (e) => {
-  currentBookIndex = Number(e.target.value);
-  const book = quizBooks[currentBookIndex];
-  currentQuizFile = book && book.chapters[0] ? book.chapters[0].file : "";
-  populateChapterSelect(currentBookIndex);
-  applyBookMeta(book);
-  loadQuiz(currentQuizFile, { shuffleQuestions: false });
-});
-quizSelect.addEventListener("change", (e) => {
-  currentQuizFile = e.target.value;
-  loadQuiz(currentQuizFile, { shuffleQuestions: false });
-});
-
-// Keyboard shortcuts
-document.addEventListener("keydown", (e) => {
-  if (e.target && ["INPUT","TEXTAREA"].includes(e.target.tagName)) return;
-  if (e.key === "ArrowLeft") go(-1);
-  if (e.key === "ArrowRight") go(+1);
-});
-
-// Init
-populateBookSelect();
-populateChapterSelect(currentBookIndex);
-applyBookMeta(quizBooks[currentBookIndex]);
-loadQuiz(currentQuizFile, { shuffleQuestions: false });
-</script>
-</body>
+      // Init
+      populateBookSelect();
+      populateChapterSelect(currentBookIndex);
+      applyBookMeta(quizBooks[currentBookIndex]);
+      loadQuiz(currentQuizFile, { shuffleQuestions: false });
+    </script>
+  </body>
 </html>

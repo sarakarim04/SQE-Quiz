@@ -40,11 +40,13 @@ JS format example:
 
 ```js
 (() => {
-  const questions = [/* ... */];
+  const questions = [
+    /* ... */
+  ];
   window.quizData = {
     title: "Chapter Title",
     subtitle: "Short description",
-    questions
+    questions,
   };
 })();
 ```
