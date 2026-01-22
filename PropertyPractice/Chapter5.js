@@ -644,8 +644,7 @@
         ],
       },
     },
-  ],
-
+  ];
 
   window.quizData = {
     title:
